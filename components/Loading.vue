@@ -1,0 +1,185 @@
+<template id="loading-component">
+  <div class="background">
+    <div class="fire">
+      <div class="flames">
+        <div class="flame" />
+        <div class="flame" />
+        <div class="flame" />
+        <div class="flame" />
+      </div>
+      <div class="logs" />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Loading'
+}
+</script>
+
+<style lang="scss" scoped>
+$dark-blue: #061A2C;
+$brownl: #70392F;
+$brownd: #612E25;
+$yellow: #FFDC01;
+$orange: #FDAC01;
+$red: #F73B01;
+$animationtime: 1.5s;
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark-blue;
+  z-index: 1000000;
+
+  .fire {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    height: 20vw;
+    width: 20vw;
+
+    .flames {
+      position: absolute;
+      bottom: 40%;
+      left: 50%;
+      width: 60%;
+      height: 60%;
+      transform: translateX(-50%) rotate(45deg);
+
+      .flame {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        background-color: $yellow;
+        border-radius: 1vw;
+
+        &:nth-child(2n + 1) {
+          animation: flameodd $animationtime ease-in infinite;
+        }
+
+        &:nth-child(2n) {
+          animation: flameeven $animationtime ease-in infinite;
+        }
+
+        &:nth-child(1) {
+          animation-delay: 0s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: $animationtime/4;
+        }
+
+        &:nth-child(3) {
+          animation-delay: $animationtime/4 * 2;
+        }
+
+        &:nth-child(4) {
+          animation-delay: $animationtime/4 * 3;
+        }
+      }
+    }
+
+    .logs {
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 15%;
+
+      &:before, &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(20deg);
+        height: 100%;
+        width: 100%;
+        border-radius: 1vw;
+        background-color: $brownl;
+      }
+
+      &:before {
+        transform: translate(-50%, -50%) rotate(-20deg);
+        background-color: $brownd;
+      }
+    }
+  }
+}
+
+@keyframes flameodd {
+  0%, 100% {
+    width: 0;
+    height: 0;
+  }
+  25% {
+    width: 100%;
+    height: 100%;
+  }
+  0% {
+    background-color: $yellow;
+    z-index: 1000000;
+  }
+  40% {
+    background-color: $orange;
+    z-index: 1000000;
+  }
+  100% {
+    background-color: $red;
+    z-index: -10;
+  }
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  25% {
+    right: 1%;
+    bottom: 2%;
+  }
+  100% {
+    right: 150%;
+    bottom: 170%;
+  }
+}
+
+@keyframes flameeven {
+  0%, 100% {
+    width: 0;
+    height: 0;
+  }
+  25% {
+    width: 100%;
+    height: 100%;
+  }
+  0% {
+    background-color: $yellow;
+    z-index: 1000000;
+  }
+  40% {
+    background-color: $orange;
+    z-index: 1000000;
+  }
+  100% {
+    background-color: $red;
+    z-index: -10;
+  }
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  25% {
+    right: 2%;
+    bottom: 1%;
+  }
+  100% {
+    right: 170%;
+    bottom: 150%;
+  }
+}
+</style>
