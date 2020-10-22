@@ -2,22 +2,24 @@ import pkg from './package'
 import { meta } from './plugins/meta'
 
 // Handles production env variables when building (These can be public)
-const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION' ? {
-  env: {
-    NUXT_ENV_FIREBASE_API_KEY: 'AIzaSyDGa7alU0NhfBATSQ6CalkY4Za9wWPrM7o',
-    NUXT_ENV_FIREBASE_AUTH_DOMAIN: 'nwplus-ubc.firebaseapp.com',
-    NUXT_ENV_FIREBASE_DATABASE_URL: 'https://nwplus-ubc.firebaseio.com',
-    NUXT_ENV_FIREBASE_PROJECT_ID: 'nwplus-ubc',
-    NUXT_ENV_FIREBASE_STORAGE_BUCKET: 'nwplus-ubc.appspot.com',
-    NUXT_ENV_FIREBASE_MESSAGING_SENDER_ID: '306881258768',
-    NUXT_ENV_FIREBASE_APP_ID: '1:306881258768:web:bc922148732abee79f7195',
-    mailingListUrl: 'https://us-central1-nwplus-ubc-dev.cloudfunctions.net/addToMailingList'
-  }
-} : {
-  env: {
-    mailingListUrl: 'https://us-central1-nwplus-ubc-dev.cloudfunctions.net/addToMailingList'
-  }
-}
+const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION'
+  ? {
+      env: {
+        NUXT_ENV_FIREBASE_API_KEY: 'AIzaSyDGa7alU0NhfBATSQ6CalkY4Za9wWPrM7o',
+        NUXT_ENV_FIREBASE_AUTH_DOMAIN: 'nwplus-ubc.firebaseapp.com',
+        NUXT_ENV_FIREBASE_DATABASE_URL: 'https://nwplus-ubc.firebaseio.com',
+        NUXT_ENV_FIREBASE_PROJECT_ID: 'nwplus-ubc',
+        NUXT_ENV_FIREBASE_STORAGE_BUCKET: 'nwplus-ubc.appspot.com',
+        NUXT_ENV_FIREBASE_MESSAGING_SENDER_ID: '306881258768',
+        NUXT_ENV_FIREBASE_APP_ID: '1:306881258768:web:bc922148732abee79f7195',
+        mailingListUrl: 'https://us-central1-nwplus-ubc-dev.cloudfunctions.net/addToMailingList'
+      }
+    }
+  : {
+      env: {
+        mailingListUrl: 'https://us-central1-nwplus-ubc-dev.cloudfunctions.net/addToMailingList'
+      }
+    }
 
 export default {
   ...envVars,
@@ -89,12 +91,6 @@ export default {
     '@nuxtjs/svg-sprite',
     'nuxt-buefy',
     '@nuxtjs/toast',
-    [
-      'nuxt-buefy',
-      {
-        /* buefy options */
-      }
-    ],
     [
       '@nuxtjs/google-analytics',
       {
