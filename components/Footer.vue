@@ -1,10 +1,9 @@
 <template>
   <div class="footer-content">
-    <p class="join-us-section">
-      nwPlus is always looking for new ventures, opportunities, and connections.
-      If you are interested in working with us, joining us or speaking at one of
-      our events, feel free to reach out to us at
-      <a class="mail-to" href="mailto:info@nwplus.io">info@nwplus.io</a>
+    <p class="footer-text">
+      Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
+      in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
+      and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
     </p>
     <div id="footer-social">
       <div id="social">
@@ -120,125 +119,119 @@
 </template>
 
 <style lang="scss" scoped>
-  @import "bulma/bulma.sass";
+@import "bulma/bulma.sass";
 
-  //Desktop CSS:
-  .footer-content {
-    text-align: center;
-    min-width: 90vw;
-    background-image: url("~@/assets/sprite/png/footer__background.png");
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    min-height: 130vh;
-    color: white;
-  }
+//Desktop CSS:
+.footer-content {
+  text-align: center;
+  min-width: 90vw;
+  min-height: 130vh;
+  color: white;
+}
 
-  #social {
-    min-width: 90vw;
-  }
+#social {
+  min-width: 90vw;
+}
 
-  a {
-    color: white;
-    text-decoration: underline;
-    transition-duration: 0.2s;
-  }
+a {
+  color: white;
+  text-decoration: underline;
+  transition-duration: 0.2s;
+}
 
-  a:hover {
-    color: #FFBC96;
-  }
+a:hover {
+  color: #FFBC96;
+}
 
-  .join-us-section {
-    width: 60%;
-    margin: 25px auto;
-    font-size: 20px;
-  }
+.footer-text {
+  width: 60%;
+  margin: 25px auto;
+  font-size: 20px;
+}
 
-  #footer-social {
-    position: absolute;
-    bottom: 1vw;
-    right: 50%;
-  }
+#footer-social {
+  position: absolute;
+  bottom: 1vw;
+  right: 50%;
+}
 
-  #social {
-    position: relative;
-    right: -50%;
-    margin-top: 30%;
-  }
+#social {
+  position: relative;
+  right: -50%;
+  margin-top: 30%;
+}
 
-  .copyright-text {
-    font-size: 20px;
-    padding: 20px;
-  }
+.copyright-text {
+  font-size: 20px;
+  padding: 20px;
+}
 
+.links {
+  margin: 15px;
+}
+
+.links a {
+  margin: 20px;
+  font-size: 20px;
+}
+
+svg {
+  height: 30px;
+  width: 90px;
+}
+
+svg path {
+  fill: white;
+  transition-duration: 0.2s;
+}
+
+svg:hover path {
+  fill: #FFBC96;
+}
+
+//Mobile CSS:
+@include until($desktop) {
   .links {
-    margin: 15px;
+    margin: 7px;
+  }
+
+  .footer-content {
+    font-size: 12px;
   }
 
   .links a {
-    margin: 20px;
-    font-size: 20px;
+    margin: 10px;
+    font-size: 12px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+
+  .copyright-text {
+    font-size: 12px;
   }
 
   svg {
-    height: 30px;
-    width: 90px;
+    height: 26px;
+    width: 60px;
+  }
+}
+
+@include until($tablet) {
+  .footer-content {
+    min-height: 237vw;
   }
 
-  svg path {
-    fill: white;
-    transition-duration: 0.2s;
+  .footer-text {
+    width: 85vw;
   }
+}
 
-  svg:hover path {
-    fill: #FFBC96;
+@include until(370px) {
+  .links {
+    display: flex;
+    flex-direction: column;
   }
-
-  //Mobile CSS:
-  @include until($desktop) {
-    .links {
-      margin: 7px;
-    }
-
-    .footer-content {
-      font-size: 12px;
-    }
-
-    .links a {
-      margin: 10px;
-      font-size: 12px;
-    }
-
-    .join-us-section {
-      font-size: 12px;
-    }
-
-    .copyright-text {
-      font-size: 12px;
-    }
-
-    svg {
-      height: 26px;
-      width: 60px;
-    }
-  }
-
-  @include until($tablet) {
-    .footer-content {
-      background-image: url("~@/assets/sprite/png/footer__background_mobile.png");
-      background-position: 50% 0;
-      min-height: 237vw;
-    }
-
-    .join-us-section {
-      width: 85vw;
-    }
-  }
-
-  @include until(370px) {
-    .links {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+}
 </style>
