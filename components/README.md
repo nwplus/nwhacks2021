@@ -4,4 +4,6 @@
 
 The components directory contains your Vue.js Components.
 
+This is a test change
+
 _Nuxt.js doesn't supercharge these components._
