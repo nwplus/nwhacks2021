@@ -1,7 +1,7 @@
 {
   "name": "nwhacks-2021",
   "version": "1.0.0",
-  "description": "At UBC Local Hack Day, we welcome hundreds of tech newbies to learn new skills, build cool projects, and share new experiences! We are part of an international celebration of diversity, accessibility, and inclusivity for newcomers in the Greater Vancouver hackathon and tech community.",
+  "description": "TODO",
   "author": "nwPlus Dev Team",
   "private": true,
   "scripts": {
@@ -57,7 +57,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
     "core-js": "2.6.5",
-    "eslint": "^5.15.1",
+    "eslint": "^7.11.0",
     "eslint-config-standard": ">=12.0.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": ">=2.16.0",
