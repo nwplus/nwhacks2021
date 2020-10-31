@@ -1,28 +1,44 @@
 <template>
   <div class="hero-section">
-    <img :src="nwHacksLogo" class="hero-logo">
     <div class="hero-apply">
-      <button>
-        APPLY NOW
-      </button>
+      <!-- <img :src="applyBtnClicked" v-if="clicked" @mouseup="toggle" class="hero-btn">
+      <img :src="applyBtn" @mousedown="apply" v-else class="hero-btn"> -->
+      <div class="hero-btn" />
     </div>
   </div>
 </template>
 
 <script>
-import nwHacksLogo from '../assets/sprite/svg/hero__logo.svg'
+import applyBtn from '../assets/sprite/svg/hero__btn.svg'
+import applyBtnClicked from '../assets/sprite/svg/hero__btn_clicked.svg'
 
 export default {
-  props: {},
+  props: {
+    // clicked: {
+    //   type: Boolean,
+    //   default: false
+    // }
+  },
   data: function () {
     return {
-      nwHacksLogo
+      applyBtn,
+      applyBtnClicked,
+      clicked: false
     }
   },
   mounted: function () {
     setTimeout(() => {
       this.isTimeout = true
     }, 300)
+  },
+  methods: {
+    apply: function () {
+      this.toggle()
+      console.log(this.clicked)
+    },
+    toggle: function () {
+      this.clicked = !this.clicked
+    }
   }
 }
 </script>
@@ -36,10 +52,11 @@ $body-font: "Source Sans Pro", sans-serif;
 // Desktop CSS
 .hero-section {
   padding-top: 5%;
+  background-image: url("~@/assets/sprite/svg/hero__background.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100vw;
-  min-height: 81vw;
+  min-height: 124vw;
   position: relative;
   text-align: center;
   color: white;
@@ -49,16 +66,20 @@ $body-font: "Source Sans Pro", sans-serif;
   overflow-x: hidden;
 }
 
-.hero-logo {
-  width: 971px;
-  height: 339px;
-}
-
 .hero-apply {
   margin-top: 5%;
-  button {
-    width: 296.41px;
+  .hero-btn {
+    background-image: url("~@/assets/sprite/svg/hero__btn.svg");
+    position: absolute;
+    margin: auto;
+    top: 30.5vw;
+    left: 0;
+    right: 0;
+    width: 297px;
     height: 78px;
+    &:active {
+      background-image: url("~@/assets/sprite/svg/hero__btn_clicked.svg");
+    }
   }
 }
 
@@ -77,11 +98,6 @@ $body-font: "Source Sans Pro", sans-serif;
 
   .hero-apply {
     margin-top: 5%;
-    button {
-      width: 150px;
-      height: 39px;
-    }
   }
-
 }
 </style>
