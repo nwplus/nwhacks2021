@@ -111,7 +111,7 @@
         <p class="copyright-text">
           Organized and held by nwPlus
           <br>
-          Copyright © UBC Local Hack Day 2020
+          Copyright © nwHacks 2021
         </p>
       </div>
     </div>
