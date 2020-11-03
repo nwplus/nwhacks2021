@@ -1,25 +1,19 @@
 <template>
   <div class="container">
-    <div id="bulletin-title-container" />
     <div id="bulletin-board-container">
       <div class="columns faqs">
-        <div class="column is-one-quarter">
+        <div class="column is-one-third">
           <div v-for="faq in faqBin[0]" :key="`Common-${faq.question}`">
             <FaqNote :faq="faq" class="faqnote" />
           </div>
         </div>
-        <div class="column is-one-quarter">
+        <div class="column is-one-third">
           <div v-for="faq in faqBin[1]" :key="`Common-${faq.question}`">
             <FaqNote :faq="faq" class="faqnote" />
           </div>
         </div>
-        <div class="column is-one-quarter">
+        <div class="column is-one-third">
           <div v-for="faq in faqBin[2]" :key="`Common-${faq.question}`">
-            <FaqNote :faq="faq" class="faqnote" />
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div v-for="faq in faqBin[3]" :key="`Common-${faq.question}`">
             <FaqNote :faq="faq" class="faqnote" />
           </div>
         </div>
@@ -46,11 +40,10 @@ export default {
       const bin = [
         [],
         [],
-        [],
         []
       ]
       this.items.forEach((item, idx) => {
-        bin[idx % 4].push(item)
+        bin[idx % 3].push(item)
       })
       return bin
     }
@@ -65,14 +58,12 @@ export default {
   position: relative;
 }
 
-#bulletin-title {
-  position: relative;
-  z-index: 3;
-  display: block;
-  margin: auto;
-  width: 43%;
-  min-height: 80px;
-  max-width: 500px;
+.columns {
+  padding: 30px;
+}
+
+.column {
+  padding: 10px;
 }
 
 #bulletin-board-container {
@@ -81,38 +72,35 @@ export default {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
-  margin: auto;
 }
 
 .faqs {
   position: static;
   z-index: 10;
-  width: 85%;
+  width: 75%;
   margin: auto;
-  padding-top: 5%;
-  padding-bottom: 10%;
+  padding-top: 9%;
+  padding-bottom: 9%;
 }
 
 .faqnote {
   position: relative;
-  transition: transform .2s; /* Animation */
+  transition: transform .35s; /* Animation */
   z-index: 5;
 }
 
 .faqnote:hover {
-  transform: scale(1.6);
+  transform: scale(1.5);
   z-index: 10;
 }
 
 //Mobile CSS:
-@include until($desktop) {
-
-#bulletin-title {
-  width: 50%;
-}
+@include until($widescreen) {
 
 #bulletin-board-container {
-  width: 85%;
+  width: 100%;
+  padding-top: 55px;
+  padding-bottom: 55px;
 }
 
 }
@@ -125,18 +113,6 @@ export default {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 92%;
-}
-
-#bulletin-title-container {
-  width: 75%;
-}
-
-#bulletin-title {
-  width: 75%;
-}
-
-#badges {
-  display: none;
 }
 
 .faqnote:hover {

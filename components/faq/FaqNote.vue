@@ -28,14 +28,14 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 @import "bulma/bulma.sass";
 
-$body-color: #56321E;
+$body-color: black;
 
 //Desktop CSS:
 .sticky-note {
     background-image: url("~@/assets/sprite/png/faq__sticky_note.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .faq {
@@ -43,7 +43,7 @@ $body-color: #56321E;
     z-index: 2;
     width: 90%;
     margin: auto;
-    padding: 25px 0px 3vh 15px;
+    padding: 20px 0px 3vh 5px;
     color: $body-color;
     font-size: 12px;
     line-height: 15px;
