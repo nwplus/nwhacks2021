@@ -24,11 +24,6 @@
           </div>
         </div>
       </div>
-      <div id="badges">
-        <img id="badge-axe" src="~@/assets/sprite/svg/faq__badge_axe.svg">
-        <img id="badge-debug" src="~@/assets/sprite/svg/faq__badge_debug.svg">
-        <img id="badge-marshmellow" src="~@/assets/sprite/svg/faq__badge_marshmellow.svg">
-      </div>
     </div>
   </div>
 </template>
@@ -70,19 +65,6 @@ export default {
   position: relative;
 }
 
-#bulletin-title-container {
-  background-image: url("~@/assets/sprite/svg/faq__wooden_title.svg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-  z-index: 1;
-  display: block;
-  margin: auto;
-  transform: translate(0%, 75%);
-  min-height: 100px;
-}
-
 #bulletin-title {
   position: relative;
   z-index: 3;
@@ -120,28 +102,6 @@ export default {
 .faqnote:hover {
   transform: scale(1.6);
   z-index: 10;
-}
-
-#badges {
-  float: right;
-}
-
-#badge-axe {
-  position: absolute;
-  bottom: 13%;
-  right: 18%;
-}
-
-#badge-debug {
-  position: absolute;
-  bottom: 25%;
-  right: 10%;
-}
-
-#badge-marshmellow {
-  position: absolute;
-  bottom: 7%;
-  right: 7%;
 }
 
 //Mobile CSS:
