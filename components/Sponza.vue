@@ -1,5 +1,6 @@
 <template>
   <div class="sponza">
+    <h1>Sponsors</h1>
     <div id="sponsorList">
       <div class="sponsorCategory">
         <div v-for="item in listOfPlatinum" :key="item.name" class="sponsorWrapper">
@@ -27,13 +28,11 @@
         </div>
       </div>
     </div>
-    <img :src="sponsorSash" class="sponsor-sash" alt="Our Sponsors">
     <BecomeSponsorButton />
   </div>
 </template>
 
 <script>
-import sponsorSash from 'assets/sprite/svg/sponsor__background.svg'
 import SponsorImage from '~/components/SponsorImage'
 import BecomeSponsorButton from '~/components/becomeSponsorButton'
 
@@ -43,11 +42,6 @@ export default {
     items: {
       type: Array,
       required: true
-    }
-  },
-  data: function () {
-    return {
-      sponsorSash
     }
   },
   computed: {
@@ -74,6 +68,12 @@ export default {
 @import "bulma/bulma.sass";
 
 //Desktop CSS:
+
+h1 {
+  color: white;
+  font-size: 2.75rem;
+}
+
 .sponsorCategory {
   margin-bottom: 20px;
   display: flex;
@@ -100,11 +100,6 @@ export default {
 }
 
 #sponsorList {
-  padding-top: 35%;
-  position: absolute;
-  // Centering an absolute element
-  left: 0;
-  right: 0;
   margin-left: auto;
   margin-right: auto;
   // Must have specific width
