@@ -1,28 +1,16 @@
 <template>
   <div class="hero-section">
     <div class="hero-apply">
-      <!-- <img :src="applyBtnClicked" v-if="clicked" @mouseup="toggle" class="hero-btn">
-      <img :src="applyBtn" @mousedown="apply" v-else class="hero-btn"> -->
       <div class="hero-btn" />
     </div>
   </div>
 </template>
 
 <script>
-import applyBtn from '../assets/sprite/svg/hero__btn.svg'
-import applyBtnClicked from '../assets/sprite/svg/hero__btn_clicked.svg'
-
 export default {
-  props: {
-    // clicked: {
-    //   type: Boolean,
-    //   default: false
-    // }
-  },
+  props: {},
   data: function () {
     return {
-      applyBtn,
-      applyBtnClicked,
       clicked: false
     }
   },
@@ -89,11 +77,6 @@ $body-font: "Source Sans Pro", sans-serif;
     min-height: 165vw;
     font-size: 12px;
     line-height: 10px;
-  }
-
-  .hero-logo {
-    width: 350px;
-    height: 160px;
   }
 
   .hero-apply {
