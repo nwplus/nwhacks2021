@@ -15,12 +15,7 @@
 
 <script>
 export default {
-  props: {
-    // clicked: {
-    //   type: Boolean,
-    //   default: false
-    // }
-  },
+  props: {},
   data: function () {
     return {
       clicked: false
