@@ -36,6 +36,7 @@ export default {
 @import "bulma/bulma.sass";
 
 $body-font: "Source Sans Pro", sans-serif;
+$mobile: 426px;
 
 // Desktop CSS
 .hero-section {
@@ -74,6 +75,7 @@ $body-font: "Source Sans Pro", sans-serif;
 // Mobile CSS
 @include until($tablet) {
   .hero-section {
+    background-image: url("~@/assets/sprite/svg/hero__background_mobile.svg");
     min-height: 165vw;
     font-size: 12px;
     line-height: 10px;
@@ -81,6 +83,20 @@ $body-font: "Source Sans Pro", sans-serif;
 
   .hero-apply {
     margin-top: 5%;
+    .hero-btn {
+      top: 41.5vw;
+    }
+  }
+}
+
+@include until($mobile) {
+  .hero-apply {
+    .hero-btn {
+      width: 130px;
+      height: 34.19px;
+      background-repeat: no-repeat;
+      background-size: 130px 34.19px;
+    }
   }
 }
 </style>
