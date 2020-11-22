@@ -5,6 +5,11 @@
       in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
       and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
     </p>
+    <div class="tv">
+      <p>
+        Made with 💖 by the nwPlus team
+      </p>
+    </div>
     <div id="footer-social">
       <div id="social">
         <p>
@@ -125,8 +130,12 @@
 .footer-content {
   text-align: center;
   min-width: 90vw;
-  min-height: 130vh;
+  min-height: 200vh;
   color: white;
+  background-image: url("~@/assets/sprite/png/footer__background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 #social {
@@ -173,6 +182,13 @@ a:hover {
 .links a {
   margin: 20px;
   font-size: 20px;
+}
+
+.tv {
+  font-size: 30px;
+  position: absolute;
+  top: 590px;
+  left: 150px;
 }
 
 svg {
