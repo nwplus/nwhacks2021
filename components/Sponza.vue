@@ -29,19 +29,16 @@
       </div>
     </div>
     <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
-    <BecomeSponsorButton />
   </div>
 </template>
 
 <script>
 import sponsorBackground from 'assets/sprite/png/sponsor__background.png'
 import SponsorImage from '~/components/SponsorImage'
-import BecomeSponsorButton from '~/components/becomeSponsorButton'
 
 export default {
   components: {
-    SponsorImage,
-    BecomeSponsorButton
+    SponsorImage
   },
   props: {
     items: {
@@ -100,6 +97,7 @@ h1 {
   position: relative;
   margin-top: 2%;
   text-align: center;
+  min-height: 200vh;
 }
 
 .sponsorBackground {
@@ -123,12 +121,21 @@ h1 {
 
 //Mobile CSS:
 @include until($tablet) {
+  h1 {
+    font-size: 10vw;
+  }
+  .sponsorBackground {
+    display: none;
+  }
   .sponsorCategory {
     flex-direction: column;
   }
   .sponsorWrapper {
     max-width: 300px;
     margin: 15px;
+  }
+  #sponsorList {
+    padding-top: 5%;
   }
 }
 </style>
