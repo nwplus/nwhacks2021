@@ -28,20 +28,30 @@
         </div>
       </div>
     </div>
+    <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
     <BecomeSponsorButton />
   </div>
 </template>
 
 <script>
+import sponsorBackground from 'assets/sprite/png/sponsor__background.png'
 import SponsorImage from '~/components/SponsorImage'
 import BecomeSponsorButton from '~/components/becomeSponsorButton'
 
 export default {
-  components: { SponsorImage, BecomeSponsorButton },
+  components: {
+    SponsorImage,
+    BecomeSponsorButton
+  },
   props: {
     items: {
       type: Array,
       required: true
+    }
+  },
+  data: function () {
+    return {
+      sponsorBackground: sponsorBackground
     }
   },
   computed: {
@@ -70,8 +80,8 @@ export default {
 //Desktop CSS:
 
 h1 {
-  color: white;
-  font-size: 2.75rem;
+  color: #FDB073;
+  font-size: 5vw;
 }
 
 .sponsorCategory {
@@ -92,7 +102,7 @@ h1 {
   text-align: center;
 }
 
-.sponsor-sash {
+.sponsorBackground {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -100,6 +110,11 @@ h1 {
 }
 
 #sponsorList {
+  padding-top: 20%;
+  position: absolute;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
   // Must have specific width
