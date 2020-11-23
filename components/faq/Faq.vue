@@ -92,14 +92,26 @@ $body-font: "HK Grotesk";
 //Desktop CSS:
 .container {
   position: relative;
+  background-image: url('../../assets/sprite/svg/faq__background.svg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-width: 100vw;
+  min-height: 150vw;
+}
+
+.columns {
+  max-width: 80%;
 }
 
 .column-left {
   padding-right: 5%;
+  padding-top: 0px;
 }
 
 .column-right {
   padding-left: 5%;
+  padding-top: 0px;
 }
 
 .faqs {
@@ -107,7 +119,7 @@ $body-font: "HK Grotesk";
   z-index: 10;
   width: 100%;
   margin: auto;
-  padding-top: 9%;
+  padding-top: 30vw;
   padding-bottom: 9%;
 }
 
@@ -116,7 +128,7 @@ $body-font: "HK Grotesk";
   background-color: #322764;
   color: $neon-blue;
   cursor: pointer;
-  padding: 20px 50px;
+  padding: 30px 50px;
   width: 100%;
   text-align: left;
   outline: none;
@@ -124,25 +136,21 @@ $body-font: "HK Grotesk";
   border-radius: 10px;
   line-height: 30px;
   font-style: normal;
-  font-size: 23px;
+  font-size: 24px;
   font-family: $body-font;
   font-weight: bold;
   box-sizing: border-box;
-  & .question {
-    width: 95%;
-  }
-  & .arrow {
+  .arrow {
     float: right;
     padding-top: 7px;
   }
-}
-
-.accordion.active {
-  border-bottom: none;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 10px;
+  &.active {
+    border-bottom: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-bottom: -1px;
+    padding-bottom: 10px;
+  }
 }
 
 button > * {
@@ -150,13 +158,13 @@ button > * {
 }
 
 .faqBox {
-  margin: 30px auto;
+  margin-top: 45px;
   box-shadow: 0px 0px 18px -2px #95F9EB;
   border-radius: 10px;
 }
 
 .panel {
-  padding: 0px 35px 20px 50px;
+  padding: 0px 38px 30px 50px;
   background-color: #322764;
   display: none;
   overflow: hidden;
@@ -164,8 +172,8 @@ button > * {
   border-top: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  font-size: 1px;
-  margin: 0 auto;
+  font-size: 18px;
+  margin: auto;
   margin-bottom: 2%;
   width: 100%;
   color: $neon-blue;
@@ -173,6 +181,16 @@ button > * {
 
 //Mobile CSS:
 @include until($widescreen) {
+
+.container {
+  background-image: url('../../assets/sprite/svg/faq__mobile_background.svg');
+  background-position: 0 0;
+  background-size: 100% 100%;
+}
+
+.faqs {
+  padding-top: 15vw;
+}
 
 .column-left {
   padding-right: 2%;
@@ -187,6 +205,12 @@ button > * {
 }
 
 @include until($tablet) {
+
+.container {
+  background-image: url('../../assets/sprite/svg/faq__mobile_background.svg');
+  background-position: 0 0;
+  padding-bottom: 20vw;
+}
 
 #bulletin-board-container {
   width: 92%;
