@@ -28,20 +28,27 @@
         </div>
       </div>
     </div>
-    <BecomeSponsorButton />
+    <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
   </div>
 </template>
 
 <script>
+import sponsorBackground from 'assets/sprite/png/sponsor__background.png'
 import SponsorImage from '~/components/SponsorImage'
-import BecomeSponsorButton from '~/components/becomeSponsorButton'
 
 export default {
-  components: { SponsorImage, BecomeSponsorButton },
+  components: {
+    SponsorImage
+  },
   props: {
     items: {
       type: Array,
       required: true
+    }
+  },
+  data: function () {
+    return {
+      sponsorBackground: sponsorBackground
     }
   },
   computed: {
@@ -70,8 +77,8 @@ export default {
 //Desktop CSS:
 
 h1 {
-  color: white;
-  font-size: 2.75rem;
+  color: #FDB073;
+  font-size: 5vw;
 }
 
 .sponsorCategory {
@@ -90,9 +97,10 @@ h1 {
   position: relative;
   margin-top: 2%;
   text-align: center;
+  min-height: 200vh;
 }
 
-.sponsor-sash {
+.sponsorBackground {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -100,6 +108,11 @@ h1 {
 }
 
 #sponsorList {
+  padding-top: 20%;
+  position: absolute;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
   // Must have specific width
@@ -108,12 +121,21 @@ h1 {
 
 //Mobile CSS:
 @include until($tablet) {
+  h1 {
+    font-size: 10vw;
+  }
+  .sponsorBackground {
+    display: none;
+  }
   .sponsorCategory {
     flex-direction: column;
   }
   .sponsorWrapper {
     max-width: 300px;
     margin: 15px;
+  }
+  #sponsorList {
+    padding-top: 5%;
   }
 }
 </style>
