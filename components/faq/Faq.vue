@@ -1,40 +1,15 @@
 <template>
   <div class="container">
     <div class="columns faqs">
+      <img :src="title" alt="FAQ" class="title">
       <div class="column column-left is-half">
         <div v-for="faq in faqBin[0]" :key="`Common-${faq.question}`" class="faqBox">
-          <button
-            @click="openShutFaq"
-            class="accordion"
-          >
-            <img :src="expandArrow" alt="expand-arrow" class="arrow">
-            <div class="question">
-              {{ faq.question }}
-            </div>
-          </button>
-          <div class="panel">
-            <p>
-              {{ faq.answer }}
-            </p>
-          </div>
+          <FaqContainer :faq="faq" />
         </div>
       </div>
       <div class="column column-right is-half">
         <div v-for="faq in faqBin[1]" :key="`Common-${faq.question}`" class="faqBox">
-          <button
-            @click="openShutFaq"
-            class="accordion"
-          >
-            <img :src="expandArrow" alt="expand-arrow" class="arrow">
-            <div class="question">
-              {{ faq.question }}
-            </div>
-          </button>
-          <div class="panel">
-            <p>
-              {{ faq.answer }}
-            </p>
-          </div>
+          <FaqContainer :faq="faq" />
         </div>
       </div>
     </div>
@@ -42,10 +17,12 @@
 </template>
 
 <script>
-import expandArrow from '../../assets/sprite/svg/faq__expand_arrow.svg'
+import title from '../../assets/sprite/png/faq__digital_title.png'
+import FaqContainer from './FaqContainer'
 
 export default {
   components: {
+    FaqContainer
   },
   props: {
     items: {
@@ -55,7 +32,7 @@ export default {
   },
   data: function () {
     return {
-      expandArrow
+      title
     }
   },
   computed: {
@@ -69,24 +46,11 @@ export default {
       })
       return bin
     }
-  },
-  methods: {
-    openShutFaq: (e) => {
-      e.target.classList.toggle('active')
-      const panel = e.target.nextElementSibling
-      if (panel.style.display === 'block') {
-        panel.style.display = 'none'
-      } else {
-        panel.style.display = 'block'
-      }
-    }
   }
 }
 </script>
 
 <style scoped lang="scss">
-$neon-blue: #BCE4EC;
-$body-font: "HK Grotesk";
 
 @import "bulma/bulma.sass";
 //Desktop CSS:
@@ -114,6 +78,16 @@ $body-font: "HK Grotesk";
   padding-top: 0px;
 }
 
+.title {
+  position: absolute;
+  max-width: 25vw;
+  left: 0;
+  right: 0;
+  top: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .faqs {
   position: static;
   z-index: 10;
@@ -123,73 +97,19 @@ $body-font: "HK Grotesk";
   padding-bottom: 9%;
 }
 
-//Desktop CSS:
-.accordion {
-  background-color: #322764;
-  color: $neon-blue;
-  cursor: pointer;
-  padding: 30px 50px;
-  width: 100%;
-  text-align: left;
-  outline: none;
-  border: 3px solid #D0FFFF;
-  border-radius: 10px;
-  line-height: 30px;
-  font-style: normal;
-  font-size: 24px;
-  font-family: $body-font;
-  font-weight: bold;
-  box-sizing: border-box;
-  .arrow {
-    float: right;
-    padding-top: 7px;
-  }
-  &.active {
-    border-bottom: none;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    margin-bottom: -1px;
-    padding-bottom: 10px;
-  }
-}
-
-button > * {
-  pointer-events: none;
-}
-
 .faqBox {
   margin-top: 45px;
   box-shadow: 0px 0px 18px -2px #95F9EB;
   border-radius: 10px;
 }
 
-.panel {
-  padding: 0px 38px 30px 50px;
-  background-color: #322764;
-  display: none;
-  overflow: hidden;
-  border: 3px solid #D0FFFF;
-  border-top: none;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  font-size: 18px;
-  margin: auto;
-  margin-bottom: 2%;
-  width: 100%;
-  color: $neon-blue;
-}
-
-//Mobile CSS:
+//Widescreen CSS:
 @include until($widescreen) {
 
 .container {
-  background-image: url('../../assets/sprite/svg/faq__mobile_background.svg');
+  background-image: url('../../assets/sprite/svg/faq__background.svg');
   background-position: 0 0;
   background-size: 100% 100%;
-}
-
-.faqs {
-  padding-top: 15vw;
 }
 
 .column-left {
@@ -202,9 +122,14 @@ button > * {
   padding-top: 0%;
 }
 
+.title {
+  max-width: 35vw;
 }
 
-@include until($tablet) {
+}
+
+//Mobile CSS:
+@include until(798px) {
 
 .container {
   background-image: url('../../assets/sprite/svg/faq__mobile_background.svg');
@@ -212,8 +137,12 @@ button > * {
   padding-bottom: 20vw;
 }
 
-#bulletin-board-container {
-  width: 92%;
+.faqs {
+  padding-top: 225px;
+}
+
+.title {
+  max-width: 300px;
 }
 
 }
