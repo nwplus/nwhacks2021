@@ -1,6 +1,12 @@
 <template>
   <div class="container">
     <div class="columns faqs">
+      <div class="stats">
+        <img :src="board" class="board">
+        <div>
+          <img :src="info" class="info">
+        </div>
+      </div>
       <img :src="title" alt="FAQ" class="title">
       <div class="column column-left is-half">
         <div v-for="faq in faqBin[0]" :key="`Common-${faq.question}`" class="faqBox">
@@ -17,6 +23,8 @@
 </template>
 
 <script>
+import board from '../../assets/sprite/svg/faq__stats_board.svg'
+import info from '../../assets/sprite/svg/faq__stats_info.svg'
 import title from '../../assets/sprite/png/faq__digital_title.png'
 import FaqContainer from './FaqContainer'
 
@@ -32,6 +40,8 @@ export default {
   },
   data: function () {
     return {
+      board,
+      info,
       title
     }
   },
@@ -78,6 +88,38 @@ export default {
   padding-top: 0px;
 }
 
+.stats {
+  // &, & * {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+  .board, div {
+    position: absolute;
+    max-width: 50vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div {
+    top: 68px;
+    width: 688px;
+    height: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    .info {
+      bottom: 0;
+      margin: auto;
+      animation: bannermove 10s linear infinite;
+    }
+  }
+}
+
 .title {
   position: absolute;
   max-width: 25vw;
@@ -101,6 +143,16 @@ export default {
   margin-top: 45px;
   box-shadow: 0px 0px 18px -2px #95F9EB;
   border-radius: 10px;
+}
+
+// https://stackoverflow.com/questions/59980269/infinite-horizontal-scrolling-image-loop
+@keyframes bannermove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
 }
 
 //Widescreen CSS:
@@ -139,6 +191,10 @@ export default {
 
 .faqs {
   padding-top: 225px;
+}
+
+.stats {
+  display: none;
 }
 
 .title {
