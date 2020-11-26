@@ -1,28 +1,32 @@
 <template>
   <div class="hero-section">
-    <img :src="nwHacksLogo" class="hero-logo">
     <div class="hero-apply">
-      <button>
-        APPLY NOW
-      </button>
+      <div class="hero-btn" />
     </div>
   </div>
 </template>
 
 <script>
-import nwHacksLogo from '../assets/sprite/svg/hero__logo.svg'
-
 export default {
   props: {},
   data: function () {
     return {
-      nwHacksLogo
+      clicked: false
     }
   },
   mounted: function () {
     setTimeout(() => {
       this.isTimeout = true
     }, 300)
+  },
+  methods: {
+    apply: function () {
+      this.toggle()
+      console.log(this.clicked)
+    },
+    toggle: function () {
+      this.clicked = !this.clicked
+    }
   }
 }
 </script>
@@ -32,14 +36,16 @@ export default {
 @import "bulma/bulma.sass";
 
 $body-font: "Source Sans Pro", sans-serif;
+$mobile: 426px;
 
 // Desktop CSS
 .hero-section {
   padding-top: 5%;
+  background-image: url("~@/assets/sprite/svg/hero__background.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100vw;
-  min-height: 81vw;
+  min-height: 124vw;
   position: relative;
   text-align: center;
   color: white;
@@ -49,39 +55,49 @@ $body-font: "Source Sans Pro", sans-serif;
   overflow-x: hidden;
 }
 
-.hero-logo {
-  width: 971px;
-  height: 339px;
-}
-
 .hero-apply {
   margin-top: 5%;
-  button {
-    width: 296.41px;
+  .hero-btn {
+    background-image: url("~@/assets/sprite/svg/hero__btn_coming_soon.svg");
+    position: absolute;
+    margin: auto;
+    top: 30.5vw;
+    left: 0;
+    right: 0;
+    width: 297px;
     height: 78px;
+    // TODO: uncomment when Coming Soon button is to be replaced
+    // &:active, &:hover {
+    //   background-image: url("~@/assets/sprite/svg/hero__btn_clicked.svg");
+    // }
   }
 }
 
 // Mobile CSS
 @include until($tablet) {
   .hero-section {
+    background-image: url("~@/assets/sprite/svg/hero__background_mobile.svg");
     min-height: 165vw;
     font-size: 12px;
     line-height: 10px;
   }
 
-  .hero-logo {
-    width: 350px;
-    height: 160px;
-  }
-
   .hero-apply {
     margin-top: 5%;
-    button {
-      width: 150px;
-      height: 39px;
+    .hero-btn {
+      top: 41.5vw;
     }
   }
+}
 
+@include until($mobile) {
+  .hero-apply {
+    .hero-btn {
+      width: 130px;
+      height: 34.19px;
+      background-repeat: no-repeat;
+      background-size: 130px 34.19px;
+    }
+  }
 }
 </style>
