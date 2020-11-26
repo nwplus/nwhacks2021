@@ -244,6 +244,13 @@ svg:hover path {
 @include until($tablet) {
   .footer-content {
     min-height: 237vw;
+    background-image: url("~@/assets/sprite/png/footer__background_mobile.png");
+    background-position: 0 150vw;
+  }
+
+  .tv {
+    bottom: 79vw;
+    left: 11vw;
   }
 
   .footer-text {
