@@ -72,8 +72,12 @@ $body-font: "HK Grotesk";
   .arrow {
     float: right;
     padding-top: 7px;
+    transition: 200ms ease;
   }
   &.active {
+    .arrow {
+      transform: scaleY(-1);
+    }
     border-bottom: none;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
