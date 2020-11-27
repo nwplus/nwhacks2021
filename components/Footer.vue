@@ -112,7 +112,7 @@
           >Become a Sponsor</a>
         </p>
         <p class="copyright-text">
-          Organized and held by nwPlus
+          Organized and held by <a href="https://www.nwplus.io/">nwPlus</a>
           <br>
           Copyright © nwHacks 2021
         </p>
