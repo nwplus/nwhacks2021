@@ -5,6 +5,9 @@
       in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
       and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
     </p>
+    <div class="tv">
+      <TV />
+    </div>
     <div id="footer-social">
       <div id="social">
         <p>
@@ -109,7 +112,7 @@
           >Become a Sponsor</a>
         </p>
         <p class="copyright-text">
-          Organized and held by nwPlus
+          Organized and held by <a href="https://www.nwplus.io/">nwPlus</a>
           <br>
           Copyright © nwHacks 2021
         </p>
@@ -118,6 +121,15 @@
   </div>
 </template>
 
+<script>
+import TV from '@/components/TV.vue'
+
+export default {
+  components: { TV }
+}
+
+</script>
+
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 
@@ -125,8 +137,13 @@
 .footer-content {
   text-align: center;
   min-width: 90vw;
-  min-height: 130vh;
+  min-height: 200vh;
   color: white;
+  background-image: url("~@/assets/sprite/png/footer__background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: bottom;
 }
 
 #social {
@@ -175,6 +192,12 @@ a:hover {
   font-size: 20px;
 }
 
+.tv {
+  position: absolute;
+  bottom: 67.5vw;
+  left: 7.5vw;
+}
+
 svg {
   height: 30px;
   width: 90px;
@@ -221,6 +244,13 @@ svg:hover path {
 @include until($tablet) {
   .footer-content {
     min-height: 237vw;
+    background-image: url("~@/assets/sprite/png/footer__background_mobile.png");
+    background-position: 0 150vw;
+  }
+
+  .tv {
+    bottom: 79vw;
+    left: 11vw;
   }
 
   .footer-text {
