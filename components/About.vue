@@ -12,9 +12,24 @@
         </p>
       </div>
       <div class="about-box about-box3">
-        <p class="about-p about-p3">
-          If you have any thoughts on the matter or wish to express your opinion please don't hesitate to send us an email to <span class="about-p about-p-bold">logistics@nwplus.io</span>
-        </p>
+        <transition name="slide-fade">
+          <p v-if="aboutOne" class="about-p about-p3">
+            If you have any thoughts on the matter or wish to express your opinion please don't hesitate to send us an email to <span class="about-p about-p-bold">logistics@nwplus.io</span>
+          </p>
+        </transition>
+        <transition name="slide-fade">
+          <p v-if="aboutTwo" class="about-p about-p3">
+            Second Panel: If you have any thoughts on the matter or wish to express your opinion please don't hesitate to send us an email to <span class="about-p about-p-bold">logistics@nwplus.io</span>
+          </p>
+        </transition>
+        <transition name="slide-fade">
+          <p v-if="aboutThree" class="about-p about-p3">
+            Third Panel: If you have any thoughts on the matter or wish to express your opinion please don't hesitate to send us an email to <span class="about-p about-p-bold">logistics@nwplus.io</span>
+          </p>
+        </transition>
+        <transition name="slide-fade">
+          <p v-if="aboutFour" />
+        </transition>
       </div>
     </div>
   </div>
@@ -26,7 +41,33 @@ import aboutPlank from '../assets/sprite/svg/about__welcome_plank.svg'
 export default {
   data: function () {
     return {
-      aboutPlank
+      aboutPlank,
+      aboutOne: true,
+      aboutTwo: false,
+      aboutThree: false,
+      aboutFour: false
+    }
+  },
+  mounted() {
+    this.updatePanel()
+  },
+  methods: {
+    updatePanel() {
+      window.setInterval(() => {
+        if (this.aboutOne) {
+          this.aboutOne = false
+          this.aboutTwo = true
+        } else if (this.aboutTwo) {
+          this.aboutTwo = false
+          this.aboutThree = true
+        } else if (this.aboutThree) {
+          this.aboutThree = false
+          this.aboutFour = true
+        } else {
+          this.aboutFour = false
+          this.aboutOne = true
+        }
+      }, 5000)
     }
   }
 }
@@ -71,6 +112,13 @@ $offset: 5em;
   padding: 5em 2em;
 }
 
+.about-box3 {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  height: 30vw;
+}
+
 .about-bg {
   width: 100%;
 }
@@ -111,6 +159,28 @@ $offset: 5em;
   margin-right: auto;
   width: 80%;
 }
+.slide-fade-leave-active,
+.slide-fade-enter-active {
+  transition: 2s;
+}
+.slide-fade-enter {
+  transform: translate(0, 250%);
+}
+.slide-fade-leave-to {
+  transform: translate(0, -250%);
+}
+
+// .slide-fade-enter-active {
+//   transition: all 4s ease-in;
+// }
+// .slide-fade-leave-active {
+//   transition: opacity all 4s ease-out;
+// }
+// .slide-fade-enter, .slide-fade-leave-to
+// /* .slide-fade-leave-active below version 2.1.8 */ {
+//   transform: translateY(50px);
+//   opacity: 0;
+// }
 
 // Mobile CSS
 @include until($tablet) {
