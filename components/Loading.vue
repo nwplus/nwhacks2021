@@ -12,6 +12,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "bulma/bulma.sass";
+
 $dark-purple: #15102D;
 $animationtime: 5s;
 
@@ -30,7 +32,7 @@ $animationtime: 5s;
   margin-bottom: auto;
   left: 0;
   right: 0;
-  bottom: 20vw;
+  bottom: 35vh;
   min-width: 30vw;
   max-width: 60vw;
   z-index: 5;
@@ -51,6 +53,14 @@ $animationtime: 5s;
   100% {
       opacity: 1;
   }
+}
+
+@include until(798px) {
+
+.center {
+  bottom: 45vh;
+}
+
 }
 
 </style>
