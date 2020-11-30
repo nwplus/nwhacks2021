@@ -46,11 +46,11 @@ $offset: 5em;
   position: relative;
   // Background image
   background: linear-gradient(180deg, #C4C4C4 0%, #8F8F8F 100%);
-  // background-image: url('../assets/sprite/png/about__background.png');
-  // background-position: 0 0;
-  // background-repeat: no-repeat;
-  // background-size: 100vw;
-  min-height: 50vw;
+  background-image: url('../assets/sprite/png/about__background.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  min-height: 100vw;
 }
 
 .about-content {
@@ -78,25 +78,13 @@ $offset: 5em;
 .about-p {
   text-align: left;
   // Spacing
-  max-width: 60ch;
+  max-width: 30ch;
   // Text
   font-family: $body-font;
   // Override SCSS compiler, use literal
   font-size: 1.5vw;
   color: #D0FFFF;
   display: inline;
-}
-
-.about-box1 {
-  top: 0 * $offset;
-}
-
-.about-box2 {
-  top: 1 * $offset;
-}
-
-.about-box3 {
-  top: 2 * $offset;
 }
 
 .about-p-bold {
