@@ -5,7 +5,6 @@
       <div class="mainContent">
         <Hero />
         <Intro id="intro" />
-        <About id="about" />
         <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
         <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
       </div>
@@ -21,7 +20,6 @@ import Intro from '@/components/Intro.vue'
 import Sponza from '@/components/Sponza.vue'
 import Footer from '@/components/Footer.vue'
 import fireDb from '@/plugins/firebase.js'
-import About from '@/components/About.vue'
 import FAQ from '@/components/faq/Faq.vue'
 
 export default {
@@ -31,7 +29,6 @@ export default {
     Intro,
     Footer,
     Sponza,
-    About,
     FAQ
   },
   data() {
