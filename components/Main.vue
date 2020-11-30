@@ -4,7 +4,7 @@
     <section id="mainSection">
       <div class="mainContent">
         <Hero />
-        <Intro id="intro" />
+        <About id="about" />
         <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
         <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
       </div>
@@ -16,7 +16,7 @@
 <script>
 import NavBar from '@/components/NavBar.vue'
 import Hero from '@/components/Hero.vue'
-import Intro from '@/components/Intro.vue'
+import About from '@/components/About.vue'
 import Sponza from '@/components/Sponza.vue'
 import Footer from '@/components/Footer.vue'
 import fireDb from '@/plugins/firebase.js'
@@ -26,7 +26,7 @@ export default {
   components: {
     NavBar,
     Hero,
-    Intro,
+    About,
     Footer,
     Sponza,
     FAQ
