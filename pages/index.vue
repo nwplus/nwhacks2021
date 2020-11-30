@@ -14,7 +14,7 @@ const AsyncComponent = () => ({
   component: new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(Main)
-    }, 100000)
+    }, 1000)
   }),
   loading: Loading,
   delay: 1
