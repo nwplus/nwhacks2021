@@ -102,7 +102,7 @@ export default {
     '@nuxtjs/style-resources'
   ],
   styleResources: {
-    scss: ['scss/lhd.scss']
+    scss: ['scss/nwhacks.scss']
   },
 
   /*

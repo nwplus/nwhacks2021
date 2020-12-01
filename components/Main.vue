@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       sponsors: [],
-      events: [],
       FAQS: [],
       faqFlag: true,
       sponsorFlag: true,
