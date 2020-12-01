@@ -1,34 +1,43 @@
 <template>
-  <div class="sponza">
-    <h1>Sponsors</h1>
-    <div id="sponsorList">
-      <div class="sponsorCategory">
-        <div v-for="item in listOfPlatinum" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
+  <div>
+    <div class="sponza">
+      <h1 class="sponsor-title">
+        Sponsors
+      </h1>
+      <div id="sponsorList">
+        <div class="sponsorCategory">
+          <div v-for="item in listOfPlatinum" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfGold" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfSilver" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfBronze" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfInKind" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
         </div>
       </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfGold" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfSilver" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfBronze" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfInKind" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
+      <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
     </div>
-    <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
+    <p class="footer-text">
+      Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
+      in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
+      and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
+    </p>
   </div>
 </template>
 
@@ -81,6 +90,30 @@ h1 {
   font-size: 5vw;
 }
 
+.sponsor-title {
+  position: absolute;
+  top: -0.5%;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-text {
+  width: 60%;
+  margin: 25px auto;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 72%;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .sponsorCategory {
   margin-bottom: 20px;
   display: flex;
@@ -97,14 +130,7 @@ h1 {
   position: relative;
   margin-top: 2%;
   text-align: center;
-  min-height: 200vh;
-}
-
-.sponsorBackground {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  min-height: 100vw;
 }
 
 #sponsorList {
