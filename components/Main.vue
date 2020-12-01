@@ -5,7 +5,6 @@
       <div class="mainContent">
         <Hero />
         <Intro id="intro" />
-        <Events id="events" :items="events" />
         <About id="about" />
         <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
         <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
@@ -22,7 +21,6 @@ import Intro from '@/components/Intro.vue'
 import Sponza from '@/components/Sponza.vue'
 import Footer from '@/components/Footer.vue'
 import fireDb from '@/plugins/firebase.js'
-import Events from '@/components/Events.vue'
 import About from '@/components/About.vue'
 import FAQ from '@/components/faq/Faq.vue'
 
@@ -33,14 +31,12 @@ export default {
     Intro,
     Footer,
     Sponza,
-    Events,
     About,
     FAQ
   },
   data() {
     return {
       sponsors: [],
-      events: [],
       FAQS: [],
       faqFlag: true,
       sponsorFlag: true,
@@ -54,16 +50,13 @@ export default {
   },
   async mounted() {
     const Sponsors = 'Sponsors'
-    const Events = 'Events'
     const FAQ = 'Faq'
     // data
     const data = await fireDb.getWebsiteData()
     const listOfSponsors = await fireDb.getCollection(Sponsors)
-    const listOfEvents = await fireDb.getCollection(Events)
     const FaqQuestions = await fireDb.getCollection(FAQ)
 
     this.sponsors = listOfSponsors
-    this.events = listOfEvents
     this.FAQs = FaqQuestions
     this.faqFlag = FaqQuestions.length !== 0 && data.featureFlags.faqFlag
     this.sponsorFlag = data.featureFlags.sponsorFlag
