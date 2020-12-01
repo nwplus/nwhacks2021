@@ -104,9 +104,9 @@ h1 {
   width: 60%;
   margin: 25px auto;
   font-size: 20px;
-  color: white;
+  color: #322764;
   position: absolute;
-  top: 72%;
+  top: 81%;
   // Centering an absolute element
   left: 0;
   right: 0;
@@ -150,6 +150,11 @@ h1 {
   h1 {
     font-size: 10vw;
   }
+
+  .footer-text {
+    color: white;
+  }
+
   .sponsorBackground {
     display: none;
   }
@@ -161,7 +166,7 @@ h1 {
     margin: 15px;
   }
   #sponsorList {
-    padding-top: 5%;
+    padding-top: 15%;
   }
 }
 </style>
