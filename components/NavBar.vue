@@ -9,7 +9,7 @@
           <img id="close" :src="close" alt="close menu">
         </a>
         <div v-on:click="toggle" class="sidebar-menu">
-          <a v-scroll-to="'#events'" href="#" class="navbar-item">About</a>
+          <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
           <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
           <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
           <a href="https://2019.nwhacks.io/" rel="noopener" target="_blank" class="navbar-item">2019</a>
@@ -30,7 +30,7 @@
         <div class="navbar-start" />
         <div class="navbar-end">
           <div class="buttons">
-            <a v-scroll-to="'#events'" href="#" class="navbar-item">About</a>
+            <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
             <a
