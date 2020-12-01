@@ -17,11 +17,11 @@ function metaMarkup({ name, description, image, url }) {
 function meta({ route, html }) {
   // meta tags (fill in your info here / dynamic per route)
   const metaTags = {
-    name: 'UBC Local Hack Day 2020',
+    name: 'nwHacks 2021',
     description:
-      'At UBC Local Hack Day, we welcome hundreds of tech newbies to learn new skills, build cool projects, and share new experiences! We are part of an international celebration of diversity, accessibility, and inclusivity for newcomers in the Greater Vancouver hackathon and tech community.',
-    image: 'https://lhd.nwplus.io/thumbnail.png',
-    url: 'https://lhd.nwplus.io'
+      'nwHacks 2021 is the largest hackathon in the pacific northwest. Usually located at UBC, Vancouver campus, this year, nwHacks 2021 is happening online. Be part of this amazing e-gathering with developers, engineers, and designers from around the world. nwHacks is part of nwPlus, a team committed to supporting tech communities in BC and beyond.',
+    image: 'https://nwhacks.io/thumbnail.png',
+    url: 'https://nwhacks.io'
   }
 
   // Load Nuxt generared HTML
