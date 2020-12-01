@@ -1,14 +1,7 @@
 <template id="loading-component">
   <div class="background">
-    <div class="fire">
-      <div class="flames">
-        <div class="flame" />
-        <div class="flame" />
-        <div class="flame" />
-        <div class="flame" />
-      </div>
-      <div class="logs" />
-    </div>
+    <img src="../assets/sprite/png/loading__reg.png" class="center reg" alt="Pulsing loading logo">
+    <img src="../assets/sprite/png/loading__glow.png" class="center glow" alt="Pulsing loading logo">
   </div>
 </template>
 
@@ -19,167 +12,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$dark-blue: #061A2C;
-$brownl: #70392F;
-$brownd: #612E25;
-$yellow: #FFDC01;
-$orange: #FDAC01;
-$red: #F73B01;
-$animationtime: 1.5s;
+@import "bulma/bulma.sass";
+
+$dark-purple: #15102D;
+$animationtime: 5s;
 
 .background {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: $dark-blue;
+  background-color: $dark-purple;
   z-index: 1000000;
+}
 
-  .fire {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -25%);
-    height: 20vw;
-    width: 20vw;
+.center {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  left: 0;
+  right: 0;
+  bottom: 35vh;
+  min-width: 30vw;
+  max-width: 60vw;
+  z-index: 5;
+}
 
-    .flames {
-      position: absolute;
-      bottom: 40%;
-      left: 50%;
-      width: 60%;
-      height: 60%;
-      transform: translateX(-50%) rotate(45deg);
+.glow {
+  animation: breathing $animationtime infinite;
+  z-index: 10;
+}
 
-      .flame {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        background-color: $yellow;
-        border-radius: 1vw;
-
-        &:nth-child(2n + 1) {
-          animation: flameodd $animationtime ease-in infinite;
-        }
-
-        &:nth-child(2n) {
-          animation: flameeven $animationtime ease-in infinite;
-        }
-
-        &:nth-child(1) {
-          animation-delay: 0s;
-        }
-
-        &:nth-child(2) {
-          animation-delay: $animationtime/4;
-        }
-
-        &:nth-child(3) {
-          animation-delay: $animationtime/4 * 2;
-        }
-
-        &:nth-child(4) {
-          animation-delay: $animationtime/4 * 3;
-        }
-      }
-    }
-
-    .logs {
-      position: absolute;
-      bottom: 25%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 15%;
-
-      &:before, &:after {
-        position: absolute;
-        content: '';
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(20deg);
-        height: 100%;
-        width: 100%;
-        border-radius: 1vw;
-        background-color: $brownl;
-      }
-
-      &:before {
-        transform: translate(-50%, -50%) rotate(-20deg);
-        background-color: $brownd;
-      }
-    }
+@keyframes breathing {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
   }
 }
 
-@keyframes flameodd {
-  0%, 100% {
-    width: 0;
-    height: 0;
-  }
-  25% {
-    width: 100%;
-    height: 100%;
-  }
-  0% {
-    background-color: $yellow;
-    z-index: 1000000;
-  }
-  40% {
-    background-color: $orange;
-    z-index: 1000000;
-  }
-  100% {
-    background-color: $red;
-    z-index: -10;
-  }
-  0% {
-    right: 0;
-    bottom: 0;
-  }
-  25% {
-    right: 1%;
-    bottom: 2%;
-  }
-  100% {
-    right: 150%;
-    bottom: 170%;
-  }
+@include until(798px) {
+
+.center {
+  bottom: 45vh;
 }
 
-@keyframes flameeven {
-  0%, 100% {
-    width: 0;
-    height: 0;
-  }
-  25% {
-    width: 100%;
-    height: 100%;
-  }
-  0% {
-    background-color: $yellow;
-    z-index: 1000000;
-  }
-  40% {
-    background-color: $orange;
-    z-index: 1000000;
-  }
-  100% {
-    background-color: $red;
-    z-index: -10;
-  }
-  0% {
-    right: 0;
-    bottom: 0;
-  }
-  25% {
-    right: 2%;
-    bottom: 1%;
-  }
-  100% {
-    right: 170%;
-    bottom: 150%;
-  }
 }
+
 </style>

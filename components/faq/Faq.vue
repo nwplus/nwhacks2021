@@ -1,44 +1,28 @@
 <template>
   <div class="container">
-    <div id="bulletin-title-container" />
-    <div id="bulletin-board-container">
-      <div class="columns faqs">
-        <div class="column is-one-quarter">
-          <div v-for="faq in faqBin[0]" :key="`Common-${faq.question}`">
-            <FaqNote :faq="faq" class="faqnote" />
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div v-for="faq in faqBin[1]" :key="`Common-${faq.question}`">
-            <FaqNote :faq="faq" class="faqnote" />
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div v-for="faq in faqBin[2]" :key="`Common-${faq.question}`">
-            <FaqNote :faq="faq" class="faqnote" />
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div v-for="faq in faqBin[3]" :key="`Common-${faq.question}`">
-            <FaqNote :faq="faq" class="faqnote" />
-          </div>
+    <div class="columns faqs">
+      <img :src="title" alt="FAQ" class="title">
+      <div class="column column-left is-half">
+        <div v-for="faq in faqBin[0]" :key="`Common-${faq.question}`" class="faqBox">
+          <FaqContainer :faq="faq" />
         </div>
       </div>
-      <div id="badges">
-        <img id="badge-axe" src="~@/assets/sprite/svg/faq__badge_axe.svg">
-        <img id="badge-debug" src="~@/assets/sprite/svg/faq__badge_debug.svg">
-        <img id="badge-marshmellow" src="~@/assets/sprite/svg/faq__badge_marshmellow.svg">
+      <div class="column column-right is-half">
+        <div v-for="faq in faqBin[1]" :key="`Common-${faq.question}`" class="faqBox">
+          <FaqContainer :faq="faq" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import FaqNote from '~/components/faq/FaqNote.vue'
+import title from '../../assets/sprite/png/faq__digital_title.png'
+import FaqContainer from './FaqContainer'
 
 export default {
   components: {
-    FaqNote
+    FaqContainer
   },
   props: {
     items: {
@@ -46,16 +30,19 @@ export default {
       required: true
     }
   },
+  data: function () {
+    return {
+      title
+    }
+  },
   computed: {
     faqBin: function () {
       const bin = [
         [],
-        [],
-        [],
         []
       ]
       this.items.forEach((item, idx) => {
-        bin[idx % 4].push(item)
+        bin[idx % 2].push(item)
       })
       return bin
     }
@@ -64,125 +51,98 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 @import "bulma/bulma.sass";
 //Desktop CSS:
 .container {
   position: relative;
-}
-
-#bulletin-title-container {
-  background-image: url("~@/assets/sprite/svg/faq__wooden_title.svg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-  z-index: 1;
-  display: block;
-  margin: auto;
-  transform: translate(0%, 75%);
-  min-height: 100px;
-}
-
-#bulletin-title {
-  position: relative;
-  z-index: 3;
-  display: block;
-  margin: auto;
-  width: 43%;
-  min-height: 80px;
-  max-width: 500px;
-}
-
-#bulletin-board-container {
-  background-image: url("~@/assets/sprite/svg/faq__bulletin_board.svg");
+  background-image: url('../../assets/sprite/svg/faq__background.svg');
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  position: relative;
-  margin: auto;
+  min-width: 100vw;
+  min-height: 150vw;
+}
+
+.columns {
+  max-width: 80%;
+}
+
+.column-left {
+  padding-right: 5%;
+  padding-top: 0px;
+}
+
+.column-right {
+  padding-left: 5%;
+  padding-top: 0px;
+}
+
+.title {
+  position: absolute;
+  max-width: 25vw;
+  left: 0;
+  right: 0;
+  top: 15vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .faqs {
   position: static;
   z-index: 10;
-  width: 85%;
+  width: 100%;
   margin: auto;
-  padding-top: 5%;
-  padding-bottom: 10%;
+  padding-top: 30vw;
+  padding-bottom: 9%;
 }
 
-.faqnote {
-  position: relative;
-  transition: transform .2s; /* Animation */
-  z-index: 5;
+.faqBox {
+  margin-top: 45px;
+  box-shadow: 0px 0px 18px -2px #95F9EB;
+  border-radius: 10px;
 }
 
-.faqnote:hover {
-  transform: scale(1.6);
-  z-index: 10;
+//Widescreen CSS:
+@include until($widescreen) {
+
+.container {
+  background-image: url('../../assets/sprite/svg/faq__background.svg');
+  background-position: 0 0;
+  background-size: 100% 100%;
 }
 
-#badges {
-  float: right;
+.column-left {
+  padding-right: 2%;
+  padding-bottom: 0%;
 }
 
-#badge-axe {
-  position: absolute;
-  bottom: 13%;
-  right: 18%;
+.column-right {
+  padding-left: 2%;
+  padding-top: 0%;
 }
 
-#badge-debug {
-  position: absolute;
-  bottom: 25%;
-  right: 10%;
+.title {
+  max-width: 35vw;
 }
 
-#badge-marshmellow {
-  position: absolute;
-  bottom: 7%;
-  right: 7%;
 }
 
 //Mobile CSS:
-@include until($desktop) {
+@include until(798px) {
 
-#bulletin-title {
-  width: 50%;
+.container {
+  background-image: url('../../assets/sprite/svg/faq__mobile_background.svg');
+  background-position: 0 0;
+  padding-bottom: 20vw;
 }
 
-#bulletin-board-container {
-  width: 85%;
+.faqs {
+  padding-top: 225px;
 }
 
-}
-
-@include until($tablet) {
-
-#bulletin-board-container {
-  background-image: url("~@/assets/sprite/svg/faq__mobile_bulletin_board.svg");
-  background-position: 50% 98%;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width: 92%;
-}
-
-#bulletin-title-container {
-  width: 75%;
-}
-
-#bulletin-title {
-  width: 75%;
-}
-
-#badges {
-  display: none;
-}
-
-.faqnote:hover {
-  position: relative;
-  transform: scale(1.3);
-  z-index: 10;
+.title {
+  max-width: 300px;
 }
 
 }

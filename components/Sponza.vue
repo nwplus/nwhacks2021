@@ -1,44 +1,54 @@
 <template>
-  <div class="sponza">
-    <div id="sponsorList">
-      <div class="sponsorCategory">
-        <div v-for="item in listOfPlatinum" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
+  <div>
+    <div class="sponza">
+      <h1 class="sponsor-title">
+        Sponsors
+      </h1>
+      <div id="sponsorList">
+        <div class="sponsorCategory">
+          <div v-for="item in listOfPlatinum" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfGold" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfSilver" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfBronze" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
+        </div>
+        <div class="sponsorCategory">
+          <div v-for="item in listOfInKind" :key="item.name" class="sponsorWrapper">
+            <SponsorImage :item="item" />
+          </div>
         </div>
       </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfGold" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfSilver" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfBronze" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
-      <div class="sponsorCategory">
-        <div v-for="item in listOfInKind" :key="item.name" class="sponsorWrapper">
-          <SponsorImage :item="item" />
-        </div>
-      </div>
+      <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
     </div>
-    <img :src="sponsorSash" class="sponsor-sash" alt="Our Sponsors">
-    <BecomeSponsorButton />
+    <p class="footer-text">
+      Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
+      in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
+      and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
+    </p>
   </div>
 </template>
 
 <script>
-import sponsorSash from 'assets/sprite/svg/sponsor__background.svg'
+import sponsorBackground from 'assets/sprite/png/sponsor__background.png'
 import SponsorImage from '~/components/SponsorImage'
-import BecomeSponsorButton from '~/components/becomeSponsorButton'
 
 export default {
-  components: { SponsorImage, BecomeSponsorButton },
+  components: {
+    SponsorImage
+  },
   props: {
     items: {
       type: Array,
@@ -47,7 +57,7 @@ export default {
   },
   data: function () {
     return {
-      sponsorSash
+      sponsorBackground: sponsorBackground
     }
   },
   computed: {
@@ -74,6 +84,36 @@ export default {
 @import "bulma/bulma.sass";
 
 //Desktop CSS:
+
+h1 {
+  color: #FDB073;
+  font-size: 5vw;
+}
+
+.sponsor-title {
+  position: absolute;
+  top: -0.5%;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-text {
+  width: 60%;
+  margin: 25px auto;
+  font-size: 20px;
+  color: #322764;
+  position: absolute;
+  top: 81%;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .sponsorCategory {
   margin-bottom: 20px;
   display: flex;
@@ -90,17 +130,11 @@ export default {
   position: relative;
   margin-top: 2%;
   text-align: center;
-}
-
-.sponsor-sash {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  min-height: 100vw;
 }
 
 #sponsorList {
-  padding-top: 35%;
+  padding-top: 20%;
   position: absolute;
   // Centering an absolute element
   left: 0;
@@ -113,12 +147,26 @@ export default {
 
 //Mobile CSS:
 @include until($tablet) {
+  h1 {
+    font-size: 10vw;
+  }
+
+  .footer-text {
+    color: white;
+  }
+
+  .sponsorBackground {
+    display: none;
+  }
   .sponsorCategory {
     flex-direction: column;
   }
   .sponsorWrapper {
     max-width: 300px;
     margin: 15px;
+  }
+  #sponsorList {
+    padding-top: 15%;
   }
 }
 </style>

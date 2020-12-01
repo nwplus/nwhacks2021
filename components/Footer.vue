@@ -1,11 +1,8 @@
 <template>
   <div class="footer-content">
-    <p class="join-us-section">
-      nwPlus is always looking for new ventures, opportunities, and connections.
-      If you are interested in working with us, joining us or speaking at one of
-      our events, feel free to reach out to us at
-      <a class="mail-to" href="mailto:info@nwplus.io">info@nwplus.io</a>
-    </p>
+    <div class="tv">
+      <TV />
+    </div>
     <div id="footer-social">
       <div id="social">
         <p>
@@ -110,135 +107,150 @@
           >Become a Sponsor</a>
         </p>
         <p class="copyright-text">
-          Organized and held by nwPlus
+          Organized and held by <a href="https://www.nwplus.io/">nwPlus</a>
           <br>
-          Copyright © UBC Local Hack Day 2020
+          Copyright © nwHacks 2021
         </p>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+import TV from '@/components/TV.vue'
+
+export default {
+  components: { TV }
+}
+
+</script>
+
 <style lang="scss" scoped>
-  @import "bulma/bulma.sass";
+@import "bulma/bulma.sass";
 
-  //Desktop CSS:
-  .footer-content {
-    text-align: center;
-    min-width: 90vw;
-    background-image: url("~@/assets/sprite/png/footer__background.png");
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    min-height: 130vh;
-    color: white;
-  }
+//Desktop CSS:
+.footer-content {
+  text-align: center;
+  min-width: 90vw;
+  min-height: 100vw;
+  color: white;
+  background-image: url("~@/assets/sprite/png/footer__background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: bottom;
+}
 
-  #social {
-    min-width: 90vw;
-  }
+#social {
+  min-width: 90vw;
+}
 
-  a {
-    color: white;
-    text-decoration: underline;
-    transition-duration: 0.2s;
-  }
+a {
+  color: white;
+  text-decoration: underline;
+  transition-duration: 0.2s;
+}
 
-  a:hover {
-    color: #FFBC96;
-  }
+a:hover {
+  color: #FFBC96;
+}
 
-  .join-us-section {
-    width: 60%;
-    margin: 25px auto;
-    font-size: 20px;
-  }
+#footer-social {
+  position: absolute;
+  bottom: 1vw;
+  right: 50%;
+}
 
-  #footer-social {
-    position: absolute;
-    bottom: 1vw;
-    right: 50%;
-  }
+#social {
+  position: relative;
+  right: -50%;
+  margin-top: 30%;
+}
 
-  #social {
-    position: relative;
-    right: -50%;
-    margin-top: 30%;
-  }
+.copyright-text {
+  font-size: 20px;
+  padding: 20px;
+}
 
-  .copyright-text {
-    font-size: 20px;
-    padding: 20px;
-  }
+.links {
+  margin: 15px;
+}
 
+.links a {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.tv {
+  position: absolute;
+  bottom: 67.5vw;
+  left: 7.5vw;
+}
+
+svg {
+  height: 30px;
+  width: 90px;
+}
+
+svg path {
+  fill: white;
+  transition-duration: 0.2s;
+}
+
+svg:hover path {
+  fill: #FFBC96;
+}
+
+//Mobile CSS:
+@include until($desktop) {
   .links {
-    margin: 15px;
+    margin: 7px;
+  }
+
+  .footer-content {
+    font-size: 12px;
   }
 
   .links a {
-    margin: 20px;
-    font-size: 20px;
+    margin: 10px;
+    font-size: 12px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+
+  .copyright-text {
+    font-size: 12px;
   }
 
   svg {
-    height: 30px;
-    width: 90px;
+    height: 26px;
+    width: 60px;
+  }
+}
+
+@include until($tablet) {
+  .footer-content {
+    min-height: 237vw;
+    background-image: url("~@/assets/sprite/png/footer__background_mobile.png");
+    background-position: 0 150vw;
   }
 
-  svg path {
-    fill: white;
-    transition-duration: 0.2s;
+  .tv {
+    bottom: 79vw;
+    left: 11vw;
   }
 
-  svg:hover path {
-    fill: #FFBC96;
+  .footer-text {
+    width: 85vw;
   }
+}
 
-  //Mobile CSS:
-  @include until($desktop) {
-    .links {
-      margin: 7px;
-    }
-
-    .footer-content {
-      font-size: 12px;
-    }
-
-    .links a {
-      margin: 10px;
-      font-size: 12px;
-    }
-
-    .join-us-section {
-      font-size: 12px;
-    }
-
-    .copyright-text {
-      font-size: 12px;
-    }
-
-    svg {
-      height: 26px;
-      width: 60px;
-    }
+@include until(370px) {
+  .links {
+    display: flex;
+    flex-direction: column;
   }
-
-  @include until($tablet) {
-    .footer-content {
-      background-image: url("~@/assets/sprite/png/footer__background_mobile.png");
-      background-position: 50% 0;
-      min-height: 237vw;
-    }
-
-    .join-us-section {
-      width: 85vw;
-    }
-  }
-
-  @include until(370px) {
-    .links {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+}
 </style>

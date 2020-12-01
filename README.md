@@ -1,9 +1,9 @@
-# nwHacks 2020
+# nwHacks 2021
 
 ## Build Setup
 
 Make sure to grab the env variables from notion and add them to a `.env` file in the root of this repository
-and change the `WEBSITE_NAME` variable to the specific website. In addition be sure to change the firebase 
+and change the `WEBSITE_NAME` variable to the specific website. In addition be sure to change the firebase
 config and google analytics to the specific project.
 
 ``` bash
