@@ -98,10 +98,6 @@ $mobile: 426px;
     z-index: 10;
   }
 
-  .hero-fog {
-    // display: none;
-  }
-
   .hero-apply {
     margin-top: 5%;
     .hero-btn {
