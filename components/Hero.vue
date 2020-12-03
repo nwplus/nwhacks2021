@@ -1,8 +1,15 @@
 <template>
-  <div class="hero-section">
-    <div class="hero-apply">
-      <div class="hero-btn" />
+  <div>
+    <div class="hero-section">
+      <div class="hero-apply">
+        <div class="hero-btn" />
+      </div>
     </div>
+    <img
+      src="~@/assets/sprite/svg/hero__background_fog.svg"
+      alt="triangle with all three sides equal"
+      class="hero-fog"
+    >
   </div>
 </template>
 
@@ -53,6 +60,14 @@ $mobile: 426px;
   font-size: 14px;
   line-height: 18px;
   overflow-x: hidden;
+  z-index: 5;
+}
+
+.hero-fog {
+  width: 100vw;
+  position: absolute;
+  z-index: 100;
+  margin-top: -35%;
 }
 
 .hero-apply {
@@ -77,9 +92,14 @@ $mobile: 426px;
 @include until($tablet) {
   .hero-section {
     background-image: url("~@/assets/sprite/svg/hero__background_mobile.svg");
-    min-height: 165vw;
+    min-height: 145vw;
     font-size: 12px;
     line-height: 10px;
+    z-index: 10;
+  }
+
+  .hero-fog {
+    // display: none;
   }
 
   .hero-apply {

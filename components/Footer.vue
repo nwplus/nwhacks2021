@@ -210,6 +210,7 @@ svg:hover path {
 
   .footer-content {
     font-size: 12px;
+    margin-top: -150%;
   }
 
   .links a {
