@@ -91,14 +91,14 @@ $body-font: "Source Sans Pro", sans-serif;
 .about-front {
   background-image: url('../assets/sprite/svg/about__front.svg');
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 125vw;
+  background-size: 100% 100%;
+  height: 130vw;
   width: 100vw;
   background-position: 0 0;
   left: 0;
   right: 0;
   position: absolute;
-  top: 1.6%;
+  top: 1.4%;
   z-index: 2;
 }
 
