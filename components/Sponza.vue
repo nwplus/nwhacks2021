@@ -76,7 +76,6 @@ export default {
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
 
-$body-font: "HK Grotesk";
 //Desktop CSS:
 
 h1 {
