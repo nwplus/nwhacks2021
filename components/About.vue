@@ -62,8 +62,9 @@ $body-font: "Source Sans Pro", sans-serif;
   background-color: #E2B8A6;
   background-image: url('../assets/sprite/png/about__background.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   height: 225vw;
+  z-index: 1;
 }
 
 .about-panels-content-mobile {
