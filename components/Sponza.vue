@@ -31,18 +31,16 @@
           </div>
         </div>
       </div>
-      <img :src="sponsorBackground" class="sponsorBackground" alt="Our Sponsors">
+      <p class="footer-text">
+        Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
+        in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
+        and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
+      </p>
     </div>
-    <p class="footer-text">
-      Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
-      in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
-      and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
-    </p>
   </div>
 </template>
 
 <script>
-import sponsorBackground from 'assets/sprite/png/sponsor__background.png'
 import SponsorImage from '~/components/SponsorImage'
 
 export default {
@@ -53,11 +51,6 @@ export default {
     items: {
       type: Array,
       required: true
-    }
-  },
-  data: function () {
-    return {
-      sponsorBackground: sponsorBackground
     }
   },
   computed: {
@@ -83,6 +76,7 @@ export default {
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
 
+$body-font: "HK Grotesk";
 //Desktop CSS:
 
 h1 {
@@ -91,8 +85,11 @@ h1 {
 }
 
 .sponsor-title {
-  position: absolute;
-  top: -0.5%;
+  position: relative;
+  font-style: normal;
+  font-family: $body-font;
+  font-weight: 700;
+  min-height: 20vh;
   // Centering an absolute element
   left: 0;
   right: 0;
@@ -103,10 +100,10 @@ h1 {
 .footer-text {
   width: 60%;
   margin: 25px auto;
-  font-size: 20px;
+  font-size: 2vw;
   color: #322764;
   position: absolute;
-  top: 81%;
+  bottom: 4.5%;
   // Centering an absolute element
   left: 0;
   right: 0;
@@ -128,14 +125,21 @@ h1 {
 
 .sponza {
   position: relative;
-  margin-top: 2%;
+  background-image: url('../assets/sprite/svg/sponsor__background.svg');
+  background-position: 0 0;
+  background-size: 100% 100%;
   text-align: center;
-  min-height: 100vw;
+  min-height: 225vw;
+  min-width: 100vw;
+}
+
+.sponsorBackground {
+  width: 100vw;
 }
 
 #sponsorList {
-  padding-top: 20%;
-  position: absolute;
+  margin-top: 9vw;
+  position: relative;
   // Centering an absolute element
   left: 0;
   right: 0;
@@ -145,19 +149,50 @@ h1 {
   width: 60%;
 }
 
+//Mid tier screen CSS:
+@include until(1980) {
+  .sponsor-title {
+    min-height: 20vw;
+  }
+
+  #sponsorList {
+    margin-top: 3vw;
+  }
+}
+//Mobile CSS:
+@include until($widescreen) {
+  .sponsor-title {
+    min-height: 20vw;
+  }
+
+  #sponsorList {
+    margin-top: 3vw;
+  }
+}
+
 //Mobile CSS:
 @include until($tablet) {
   h1 {
     font-size: 10vw;
   }
 
+  .sponza {
+    background-color: #322764;
+    background-size: 0% 0%;
+  }
+
+  .sponsor-title {
+    background-image: url('../assets/sprite/svg/sponsor__title_background_m.svg');
+    background-position: 0 0;
+    background-size: 100% 100%;
+    padding-top: 2vw;
+    min-height: 25vw;
+  }
+
   .footer-text {
     color: white;
   }
 
-  .sponsorBackground {
-    display: none;
-  }
   .sponsorCategory {
     flex-direction: column;
   }
@@ -166,7 +201,7 @@ h1 {
     margin: 15px;
   }
   #sponsorList {
-    padding-top: 15%;
+    margin-top: 0;
   }
 }
 </style>

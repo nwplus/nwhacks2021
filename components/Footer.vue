@@ -130,6 +130,7 @@ export default {
 
 //Desktop CSS:
 .footer-content {
+  margin-top: -30%;
   text-align: center;
   min-width: 90vw;
   min-height: 100vw;
@@ -209,6 +210,7 @@ svg:hover path {
 
   .footer-content {
     font-size: 12px;
+    margin-top: -150%;
   }
 
   .links a {
