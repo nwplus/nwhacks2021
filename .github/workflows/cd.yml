@@ -19,7 +19,7 @@ jobs:
         run: |
           yarn install
           yarn generate:prod
-          echo "nwhacks.nwplus.io" >> dist/CNAME
+          echo "nwhacks.io" >> dist/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
