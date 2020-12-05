@@ -178,6 +178,7 @@ h1 {
   .sponza {
     background-color: #322764;
     background-size: 0% 0%;
+    z-index: 1;
   }
 
   .sponsor-title {
