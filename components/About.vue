@@ -51,7 +51,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
-$body-font: "Source Sans Pro", sans-serif;
 
 // Desktop CSS
 .about-container {
@@ -118,7 +117,6 @@ $body-font: "Source Sans Pro", sans-serif;
 }
 
 $neon-blue: #D0FFFF;
-$about-font: "HK Grotesk";
 
 .about-text {
   // Spacing
