@@ -1,7 +1,7 @@
 <template>
   <div class="footer-content">
     <div class="tv">
-      <TV />
+      <!-- <TV /> -->
     </div>
     <div id="footer-social">
       <div id="social">
@@ -117,10 +117,10 @@
 </template>
 
 <script>
-import TV from '@/components/TV.vue'
+// import TV from '@/components/TV.vue'
 
 export default {
-  components: { TV }
+  // components: { TV }
 }
 
 </script>
@@ -133,10 +133,10 @@ export default {
   margin-top: 0%;
   text-align: center;
   min-width: 100vw;
-  min-height: 80vw;
-  margin-top: -12%;
+  min-height: 105vw;
+  margin-top: -35%;
   color: white;
-  background-image: url("~@/assets/sprite/png/footer__background.png");
+  background-image: url("~@/assets/sprite/svg/footer__background.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: relative;
@@ -243,8 +243,6 @@ svg:hover path {
   }
 
   .tv {
-    // Tight on time so not going to spend much time on this
-    display: none;
     bottom: 79vw;
     left: 11vw;
   }
