@@ -20,8 +20,8 @@ function meta({ route, html }) {
     name: 'nwHacks 2021',
     description:
       'nwHacks 2021 is the largest hackathon in the pacific northwest. Usually located at UBC, Vancouver campus, this year, nwHacks 2021 is happening online. Be part of this amazing e-gathering with developers, engineers, and designers from around the world. nwHacks is part of nwPlus, a team committed to supporting tech communities in BC and beyond.',
-    image: 'https://nwhacks.io/thumbnail.png',
-    url: 'https://nwhacks.io'
+    image: 'https://www.nwhacks.io/thumbnail.png',
+    url: 'https://www.nwhacks.io'
   }
 
   // Load Nuxt generared HTML
