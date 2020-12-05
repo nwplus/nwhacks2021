@@ -76,13 +76,11 @@ $mobile: 426px;
     background-image: url("~@/assets/sprite/svg/hero__btn_coming_soon.svg");
     position: absolute;
     margin: auto;
-    top: 29vw;
+    top: 30.5vw;
     left: 0;
     right: 0;
-    max-width: 297px;
-    height: 5%;
-    min-height: 52px;
-    max-height: 70px;
+    width: 297px;
+    height: 78px;
     // TODO: uncomment when Coming Soon button is to be replaced
     // &:active, &:hover {
     //   background-image: url("~@/assets/sprite/svg/hero__btn_clicked.svg");
@@ -104,7 +102,6 @@ $mobile: 426px;
     margin-top: 5%;
     .hero-btn {
       top: 41.5vw;
-      height: 8%;
     }
   }
 }
