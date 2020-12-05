@@ -209,10 +209,11 @@ a.navbar-item:focus-within {
   #sidebar {
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     height: 100%;
     width: 100vw;
     background: #1e313f;
+    overflow-y: hidden;
     .sidebar-menu {
       width: 100%;
       display: flex;
