@@ -1,7 +1,7 @@
 <template>
   <div class="footer-content">
     <div class="tv">
-      <!-- <TV /> -->
+      <TV />
     </div>
     <div id="footer-social">
       <div id="social">
@@ -117,10 +117,10 @@
 </template>
 
 <script>
-// import TV from '@/components/TV.vue'
+import TV from '@/components/TV.vue'
 
 export default {
-  // components: { TV }
+  components: { TV }
 }
 
 </script>
@@ -130,17 +130,16 @@ export default {
 
 //Desktop CSS:
 .footer-content {
-  margin-top: 0%;
+  margin-top: -30%;
   text-align: center;
-  min-width: 100vw;
-  min-height: 105vw;
-  margin-top: -35%;
+  min-width: 90vw;
+  min-height: 100vw;
   color: white;
-  background-image: url("~@/assets/sprite/svg/footer__background.svg");
-  background-size: 100% 100%;
+  background-image: url("~@/assets/sprite/png/footer__background.png");
+  background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  z-index: 0;
+  background-position: bottom;
 }
 
 #social {
@@ -211,6 +210,7 @@ svg:hover path {
 
   .footer-content {
     font-size: 12px;
+    margin-top: -150%;
   }
 
   .links a {
@@ -234,12 +234,9 @@ svg:hover path {
 
 @include until($tablet) {
   .footer-content {
-    min-width: 100vw;
-    min-height: 175vw;
-    background-image: url("~@/assets/sprite/svg/footer__background_mobile.svg");
-    background-size: 100% 100%;
-    margin-top: -40%;
-    background-color: #322764;
+    min-height: 237vw;
+    background-image: url("~@/assets/sprite/png/footer__background_mobile.png");
+    background-position: 0 150vw;
   }
 
   .tv {

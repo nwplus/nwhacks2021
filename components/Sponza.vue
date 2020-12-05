@@ -76,6 +76,7 @@ export default {
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
 
+$body-font: "HK Grotesk";
 //Desktop CSS:
 
 h1 {
@@ -178,7 +179,6 @@ h1 {
   .sponza {
     background-color: #322764;
     background-size: 0% 0%;
-    z-index: 1;
   }
 
   .sponsor-title {
