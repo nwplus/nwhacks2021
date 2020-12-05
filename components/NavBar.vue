@@ -12,7 +12,7 @@
           <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
           <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
           <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
-          <a href="https://2019.nwhacks.io/" rel="noopener" target="_blank" class="navbar-item">2019</a>
+          <a href="https://2020.nwhacks.io/" rel="noopener" target="_blank" class="navbar-item">2020</a>
         </div>
       </div>
     </nav>
@@ -34,11 +34,11 @@
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
             <a
-              href="https://2019.nwhacks.io/"
+              href="https://2020.nwhacks.io/"
               rel="noopener"
               target="_blank"
               class="navbar-item"
-            >2019</a>
+            >2020</a>
           </div>
           <a href="https://www.nwplus.io/" target="_blank" rel="noopener">
             <img
@@ -209,10 +209,11 @@ a.navbar-item:focus-within {
   #sidebar {
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     height: 100%;
     width: 100vw;
     background: #1e313f;
+    overflow-y: hidden;
     .sidebar-menu {
       width: 100%;
       display: flex;
