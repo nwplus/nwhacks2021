@@ -4,7 +4,9 @@
       <div class="stats">
         <img :src="board" class="board">
         <div>
-          <img :src="info" class="info">
+          <p class="info">
+            {{ info }}
+          </p>
         </div>
       </div>
       <img :src="title" alt="FAQ" class="title">
@@ -24,7 +26,6 @@
 
 <script>
 import board from '../../assets/sprite/svg/faq__stats_board.svg'
-import info from '../../assets/sprite/svg/faq__stats_info.svg'
 import title from '../../assets/sprite/png/faq__digital_title.png'
 import FaqContainer from './FaqContainer'
 
@@ -36,12 +37,16 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    info: {
+      type: String,
+      required: true,
+      default: '800+ hackers 200+ projects 800+ hackers 200+ projects'
     }
   },
   data: function () {
     return {
       board,
-      info,
       title
     }
   },
@@ -61,7 +66,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import "bulma/bulma.sass";
 //Desktop CSS:
 .container {
@@ -89,17 +94,9 @@ export default {
 }
 
 .stats {
-  // &, & * {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
   .board, div {
     position: absolute;
-    max-width: 50vw;
+    height: 15vw;
     top: 0;
     left: 0;
     right: 0;
@@ -107,13 +104,17 @@ export default {
     margin-right: auto;
   }
   div {
-    top: 68px;
-    width: 688px;
-    height: 120px;
+    width: 50vw;
+    height: 8.75vw;
+    top: 5.5vw;
+    display: flex;
     overflow: hidden;
     white-space: nowrap;
     .info {
       bottom: 0;
+      color: #95F9EB;
+      font-family: 'VT323', monospace;
+      font-size: 64px;
       margin: auto;
       animation: bannermove 10s linear infinite;
     }
