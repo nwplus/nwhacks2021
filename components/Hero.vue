@@ -2,7 +2,7 @@
   <div>
     <div class="hero-section">
       <div class="hero-apply">
-        <div class="hero-btn" />
+        <div :class="registration ? 'apply-now-btn' : 'coming-soon-btn'" class="hero-btn" />
       </div>
     </div>
     <img
@@ -15,7 +15,12 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    registration: {
+      required: true,
+      type: Boolean
+    }
+  },
   data: function () {
     return {
       clicked: false
@@ -73,7 +78,6 @@ $mobile: 426px;
 .hero-apply {
   margin-top: 5%;
   .hero-btn {
-    background-image: url("~@/assets/sprite/svg/hero__btn_coming_soon.svg");
     position: absolute;
     margin: auto;
     top: 29vw;
@@ -83,10 +87,15 @@ $mobile: 426px;
     height: 5%;
     min-height: 52px;
     max-height: 70px;
-    // TODO: uncomment when Coming Soon button is to be replaced
-    // &:active, &:hover {
-    //   background-image: url("~@/assets/sprite/svg/hero__btn_clicked.svg");
-    // }
+  }
+  .apply-now-btn {
+    background-image: url("~@/assets/sprite/svg/hero__btn.svg");
+    &:active, &:hover {
+      background-image: url("~@/assets/sprite/svg/hero__btn_clicked.svg");
+    }
+  }
+  .coming-soon-btn {
+    background-image: url("~@/assets/sprite/svg/hero__btn_coming_soon.svg");
   }
 }
 
