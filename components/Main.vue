@@ -58,7 +58,7 @@ export default {
     this.FAQs = FaqQuestions
     this.faqFlag = FaqQuestions.length !== 0 && data.featureFlags.faqFlag
     this.sponsorFlag = data.featureFlags.sponsorFlag
-    // this.registrationFlag = data.featureFlags.registrationFlag
+    this.registrationFlag = data.featureFlags.registrationFlag
 
     this.dataReady = true
   }

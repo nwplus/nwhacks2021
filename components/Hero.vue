@@ -2,7 +2,11 @@
   <div>
     <div class="hero-section">
       <div class="hero-apply">
-        <div :class="registration ? 'apply-now-btn' : 'coming-soon-btn'" class="hero-btn" />
+        <div v-if="registration">
+          <!-- Add link once internal gets back to us -->
+          <a href="//www.nwplus.io"><div class="hero-btn apply-now-btn" /></a>
+        </div>
+        <div v-else class="hero-btn coming-soon-btn" />
       </div>
     </div>
     <img
