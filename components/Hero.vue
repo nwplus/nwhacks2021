@@ -87,6 +87,8 @@ $mobile: 426px;
     top: 29vw;
     left: 0;
     right: 0;
+    max-width: 297px;
+    height: 5%;
     min-height: 52px;
     max-height: 70px;
   }
