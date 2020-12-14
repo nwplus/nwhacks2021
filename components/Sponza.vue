@@ -31,11 +31,6 @@
           </div>
         </div>
       </div>
-      <p class="footer-text">
-        Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
-        in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
-        and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
-      </p>
     </div>
   </div>
 </template>
@@ -89,20 +84,6 @@ h1 {
   font-family: $body-font;
   font-weight: 700;
   min-height: 20vh;
-  // Centering an absolute element
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer-text {
-  width: 60%;
-  margin: 25px auto;
-  font-size: 2vw;
-  color: #322764;
-  position: absolute;
-  bottom: 4.5%;
   // Centering an absolute element
   left: 0;
   right: 0;
@@ -187,10 +168,6 @@ h1 {
     background-size: 100% 100%;
     padding-top: 2vw;
     min-height: 25vw;
-  }
-
-  .footer-text {
-    color: white;
   }
 
   .sponsorCategory {
