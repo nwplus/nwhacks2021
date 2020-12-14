@@ -3,9 +3,9 @@
     <div class="hero-section">
       <div class="hero-apply">
         <div v-if="registration">
-          <a href="https://portal.nwplus.io/application"><div class="hero-btn apply-now-btn" /></a>
+          <a href="https://portal.nwplus.io/application"><img @mouseenter="applyImage = require('@/assets/sprite/svg/hero__btn_clicked.svg')" @mouseleave="applyImage = require('@/assets/sprite/svg/hero__btn.svg')" :src="applyImage" alt="Apply" class="hero-btn"></a>
         </div>
-        <div v-else class="hero-btn coming-soon-btn" />
+        <img v-else src="~@/assets/sprite/svg/hero__btn_coming_soon.svg" alt="Coming Soon" class="hero-btn">
       </div>
     </div>
     <img
@@ -26,7 +26,8 @@ export default {
   },
   data: function () {
     return {
-      clicked: false
+      clicked: false,
+      applyImage: require('@/assets/sprite/svg/hero__btn.svg')
     }
   },
   mounted: function () {
@@ -86,19 +87,8 @@ $mobile: 426px;
     top: 29vw;
     left: 0;
     right: 0;
-    max-width: 297px;
-    height: 5%;
     min-height: 52px;
     max-height: 70px;
-  }
-  .apply-now-btn {
-    background-image: url("~@/assets/sprite/svg/hero__btn.svg");
-    &:active, &:hover {
-      background-image: url("~@/assets/sprite/svg/hero__btn_clicked.svg");
-    }
-  }
-  .coming-soon-btn {
-    background-image: url("~@/assets/sprite/svg/hero__btn_coming_soon.svg");
   }
 }
 
@@ -126,6 +116,7 @@ $mobile: 426px;
     .hero-btn {
       width: 130px;
       height: 34.19px;
+      top: 38.5vw;
       background-repeat: no-repeat;
       background-size: 130px 34.19px;
     }
