@@ -81,8 +81,8 @@ export default {
   },
   data() {
     return {
-      visible: screen.width > 768 ? 'hidden' : 'visible',
-      opacity: screen.width > 768 ? '0' : '1',
+      visible: screen.width > 1024 ? 'hidden' : 'visible',
+      opacity: screen.width > 1024 ? '0' : '1',
       open: false,
       close,
       hamburger,
@@ -108,7 +108,7 @@ export default {
       }
     },
     handleScroll() {
-      if (screen.width > 768) {
+      if (screen.width > 1024) {
         let lastScroll = 0
         return (event) => {
           const scroll =
@@ -154,7 +154,7 @@ $white: #ffffff;
   color: rgba(1, 1, 1, 0);
   position: fixed;
   top: 0%;
-  width: 100%;
+  width: 100vw;
   padding: 0;
   visibility: visible;
   transition: 0.5s ease-in-out;
@@ -231,7 +231,7 @@ a.navbar-item:focus-within {
     height: 30px;
   }
 }
-@include until($tablet) {
+@include until(1024px) {
   #sidebar {
     position: fixed;
     top: 0;
@@ -257,14 +257,6 @@ a.navbar-item:focus-within {
     float: right;
     padding: 25px;
   }
-  #mlh-trust-badge {
-    left:25px;
-    max-width:50px;
-    min-width:30px;
-    width: 6%;
-  }
-}
-@include until($mobile) {
   #mlh-trust-badge {
     left:25px;
     max-width:40px;
