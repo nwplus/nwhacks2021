@@ -100,6 +100,12 @@ export default {
   methods: {
     toggle() {
       this.open = !this.open
+      // Fix screen while menu is opened
+      if (!this.open) {
+        document.body.style.position = ''
+      } else {
+        document.body.style.position = 'fixed'
+      }
     },
     handleScroll() {
       if (screen.width > 768) {
@@ -227,13 +233,13 @@ a.navbar-item:focus-within {
 }
 @include until($tablet) {
   #sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 100;
     height: 100%;
     width: 100vw;
     background: #1e313f;
-    overflow-y: hidden;
+    overflow: hidden;
     .sidebar-menu {
       width: 100%;
       display: flex;
