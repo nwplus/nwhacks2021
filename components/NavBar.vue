@@ -140,7 +140,6 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 $white: #ffffff;
-$mobile: 426px;
 
 .navbar {
   font-family: Source Sans Pro;
