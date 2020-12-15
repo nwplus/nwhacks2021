@@ -66,7 +66,7 @@ $mobile: 426px;
 .hero-fog {
   width: 100vw;
   position: absolute;
-  z-index: 100;
+  z-index: 50;
   margin-top: -35%;
 }
 
