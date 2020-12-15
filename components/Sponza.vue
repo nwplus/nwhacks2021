@@ -35,6 +35,11 @@
         <a href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9" rel="noopener" target="_blank" class="cta-btn"><img src="~@/assets/sprite/svg/mentor__btn.svg" alt="Apply to Mentor"></a>
         <a href="mailto:sponsorship@nwplus.io?subject=Sponsorship" class="cta-btn"><img src="~@/assets/sprite/svg/sponsor__btn.svg" alt="Become a Sponsor"></a>
       </div>
+      <p class="footer-text">
+        Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
+        in Vancouver, Canada. Learn something new at UBC Local Hack Day, make new friends across the Pacific Northwest
+        and around the globe at nwHacks, and join an empowering community of women* in tech at cmd-f.
+      </p>
     </div>
   </div>
 </template>
@@ -131,6 +136,7 @@ h1 {
   margin-right: auto;
   // Must have specific width
   width: 60%;
+  margin-bottom: 20%;
 }
 
 .ctaContainer {
@@ -139,7 +145,7 @@ h1 {
   justify-content: center;
   z-index: 99;
   position: absolute;
-  bottom: 5%;
+  bottom: 4%;
   // Centering an absolute element
   left: 0;
   right: 0;
@@ -153,6 +159,20 @@ h1 {
 
 .cta-btn:hover {
   opacity: 0.9;
+}
+
+.footer-text {
+  width: 60%;
+  margin: 25px auto;
+  font-size: 1.5vw;
+  color: #322764;
+  position: absolute;
+  bottom: 7.5%;
+  // Centering an absolute element
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 //Mid tier screen CSS:
@@ -205,12 +225,11 @@ h1 {
   }
   #sponsorList {
     margin-top: 0;
+    padding-bottom: 100%;
+  }
+  .footer-text {
+    color: white;
   }
 }
 
-@include until($mobile) {
-  .ctaContainer {
-    flex-direction: column;
-  }
-}
 </style>
