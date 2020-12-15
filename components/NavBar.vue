@@ -12,6 +12,7 @@
           <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
           <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
           <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
+          <a href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9" rel="noopener" target="_blank" class="navbar-item">Mentors</a>
           <a href="https://2020.nwhacks.io/" rel="noopener" target="_blank" class="navbar-item">2020</a>
         </div>
       </div>
@@ -33,6 +34,12 @@
             <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
+            <a
+              href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9"
+              rel="noopener"
+              target="_blank"
+              class="navbar-item"
+            >Mentors</a>
             <a
               href="https://2020.nwhacks.io/"
               rel="noopener"
