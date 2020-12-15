@@ -52,7 +52,6 @@ export default {
 @import "bulma/bulma.sass";
 
 $body-font: "Source Sans Pro", sans-serif;
-$mobile: 426px;
 
 // Desktop CSS
 .hero-section {
