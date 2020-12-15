@@ -12,6 +12,7 @@
           <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
           <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
           <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
+          <a href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9" rel="noopener" target="_blank" class="navbar-item">Mentors</a>
           <a href="https://2020.nwhacks.io/" rel="noopener" target="_blank" class="navbar-item">2020</a>
         </div>
       </div>
@@ -23,6 +24,9 @@
       role="navigation"
       aria-label="main navigation"
     >
+      <a id="mlh-trust-badge" href="https://mlh.io/seasons/2021/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=black" target="_blank">
+        <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-black.svg" alt="Major League Hacking 2021 Hackathon Season" style="width:100%">
+      </a>
       <a v-on:click="toggle" class="menu-icon" href="#">
         <img id="hamburger" :src="hamburger" alt="hamburger menu">
       </a>
@@ -33,6 +37,12 @@
             <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-if="sponsors" v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
+            <a
+              href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9"
+              rel="noopener"
+              target="_blank"
+              class="navbar-item"
+            >Mentors</a>
             <a
               href="https://2020.nwhacks.io/"
               rel="noopener"
@@ -182,6 +192,16 @@ a.navbar-item:focus-within {
   right: 100%;
   top: 25%;
 }
+#mlh-trust-badge {
+  display:block;
+  max-width:70px;
+  min-width:50px;
+  position:fixed;
+  left:50px;
+  top:0;
+  width:10%;
+  z-index:999
+}
 .a {
   font-size: 24px;
 }
@@ -230,6 +250,19 @@ a.navbar-item:focus-within {
     display: block;
     float: right;
     padding: 25px;
+  }
+  #mlh-trust-badge {
+    left:25px;
+    max-width:50px;
+    min-width:30px;
+    width: 6%;
+  }
+}
+@include until($mobile) {
+  #mlh-trust-badge {
+    left:25px;
+    max-width:40px;
+    min-width:20px;
   }
 }
 </style>
