@@ -246,6 +246,7 @@ a.navbar-item:focus-within {
     padding: 25px;
   }
   #mlh-trust-badge {
+    left:45px;
     max-width:50px;
     min-width:30px;
     width: 6%;
@@ -253,6 +254,7 @@ a.navbar-item:focus-within {
 }
 @include until($mobile) {
   #mlh-trust-badge {
+    left:35px;
     max-width:40px;
     min-width:20px;
   }
