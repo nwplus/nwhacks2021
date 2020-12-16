@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="ctaContainer">
-        <a href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9" rel="noopener" target="_blank" class="cta-btn"><img src="~@/assets/sprite/svg/mentor__btn.svg" alt="Apply to Mentor"></a>
+        <a v-if="mentorRegistration" href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9" rel="noopener" target="_blank" class="cta-btn"><img src="~@/assets/sprite/svg/mentor__btn.svg" alt="Apply to Mentor"></a>
         <a href="mailto:sponsorship@nwplus.io?subject=Sponsorship" class="cta-btn"><img src="~@/assets/sprite/svg/sponsor__btn.svg" alt="Become a Sponsor"></a>
       </div>
       <p class="footer-text">
@@ -55,6 +55,10 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    mentorRegistration: {
+      required: true,
+      type: Boolean
     }
   },
   computed: {
@@ -229,6 +233,11 @@ h1 {
   }
   .footer-text {
     color: white;
+  }
+  .cta-btn{
+    img {
+      max-width: 150px;
+    }
   }
 }
 
