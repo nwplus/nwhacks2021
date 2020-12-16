@@ -1,12 +1,12 @@
 <template>
   <div id="main-page" v-if="dataReady" style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="faqFlag" :sponsors="sponsorFlag" />
+    <NavBar id="navbar" :faq="faqFlag" :sponsors="sponsorFlag" :mentorRegistration="mentorFlag" />
     <section id="mainSection">
       <div class="mainContent">
         <Hero :registration="registrationFlag" />
         <About id="about" />
         <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
-        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
+        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" :mentorRegistration="mentorFlag" />
       </div>
     </section>
     <Footer />
@@ -38,6 +38,7 @@ export default {
       faqFlag: true,
       sponsorFlag: true,
       registrationFlag: false,
+      mentorFlag: false,
       dataReady: false
     }
   },
@@ -59,6 +60,7 @@ export default {
     this.faqFlag = FaqQuestions.length !== 0 && data.featureFlags.faqFlag
     this.sponsorFlag = data.featureFlags.sponsorFlag
     this.registrationFlag = data.featureFlags.registrationFlag
+    this.mentorFlag = data.featureFlags.mentorFlag
 
     this.dataReady = true
   }
