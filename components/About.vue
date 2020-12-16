@@ -180,6 +180,13 @@ $neon-blue: #D0FFFF;
   width: 80%;
 }
 
+@include until($desktop) {
+  .about-content {
+    top: 5%;
+    width: 85%;
+  }
+}
+
 @include until($tablet) {
   .about-container {
     background-image: url('../assets/sprite/png/about__background_mobile.png');
@@ -187,8 +194,7 @@ $neon-blue: #D0FFFF;
   }
 
   .about-content {
-    top: 6%;
-    width: 85%;
+    top: 3%;
   }
 
   .about-panels-content-mobile {
@@ -224,7 +230,7 @@ $neon-blue: #D0FFFF;
     left: 0;
     right: 0;
     position: absolute;
-    top: 10%;
+    top: 14%;
     z-index: 2;
   }
 
