@@ -81,8 +81,8 @@ export default {
   },
   data() {
     return {
-      visible: screen.width > 1024 ? 'hidden' : 'visible',
-      opacity: screen.width > 1024 ? '0' : '1',
+      visible: 'visible',
+      opacity: '1',
       open: false,
       close,
       hamburger,
@@ -108,35 +108,21 @@ export default {
       }
     },
     handleScroll() {
-      if (screen.width > 1024) {
-        let lastScroll = 0
-        return (event) => {
-          const scroll =
-            window.pageYOffset || document.documentElement.scrollTop
-          if (scroll <= 0) {
-            this.visible = 'visible'
-            this.opacity = '1'
-          } else if (scroll > lastScroll) {
-            this.visible = 'hidden'
-            this.opacity = '0'
-          } else {
-            this.visible = 'visible'
-            this.opacity = '1'
-          }
-          lastScroll = scroll
+      let lastScroll = 0
+      return (event) => {
+        const scroll =
+          window.pageYOffset || document.documentElement.scrollTop
+        if (scroll <= 0) {
+          this.visible = 'visible'
+          this.opacity = '1'
+        } else if (scroll > lastScroll) {
+          this.visible = 'hidden'
+          this.opacity = '0'
+        } else {
+          this.visible = 'visible'
+          this.opacity = '1'
         }
-      } else {
-        return (event) => {
-          const scroll =
-            window.pageYOffset || document.documentElement.scrollTop
-          if (scroll <= 80) {
-            this.visible = 'visible'
-            this.opacity = '1'
-          } else {
-            this.visible = 'hidden'
-            this.opacity = '0'
-          }
-        }
+        lastScroll = scroll
       }
     }
   }
@@ -261,6 +247,7 @@ a.navbar-item:focus-within {
     left:25px;
     max-width:40px;
     min-width:20px;
+    width: 6%;
   }
 }
 </style>
