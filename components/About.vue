@@ -180,8 +180,9 @@ $neon-blue: #D0FFFF;
 
 @include until($tablet) {
   .about-container {
-    background-image: url('../assets/sprite/png/about__background_mobile.png');
+    background-image: url('../assets/sprite/svg/about__background_mobile.svg');
     min-height: 300vw;
+    width: 100vw;
   }
 
   .about-content {
