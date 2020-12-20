@@ -61,10 +61,10 @@ export default {
   align-items: center;
   position: relative;
   background-color: #E2B8A6;
-  background-image: url('../assets/sprite/png/about__background.png');
+  background-image: url('../assets/sprite/svg/about__background.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 225vw;
+  height: 216.75vw;
   z-index: 1;
 }
 
@@ -93,8 +93,8 @@ export default {
   background-image: url('../assets/sprite/svg/about__front.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 130vw;
-  width: 100vw;
+  height: 123vw;
+  width: 101vw;
   background-position: 0 0;
   left: 0;
   right: 0;
@@ -189,8 +189,9 @@ $neon-blue: #D0FFFF;
 
 @include until($tablet) {
   .about-container {
-    background-image: url('../assets/sprite/png/about__background_mobile.png');
+    background-image: url('../assets/sprite/svg/about__background_mobile.svg');
     min-height: 300vw;
+    width: 100vw;
   }
 
   .about-content {

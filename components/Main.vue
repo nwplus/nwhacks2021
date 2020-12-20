@@ -73,6 +73,7 @@ export default {
 #main-page {
   background: linear-gradient(180deg, #4A414C 8.34%, #061A2C 9.19%, #586971 12%, #172C3E 15%, #172C3E 22%, #67757B 26.66%, #B5B5B5 30.2%, #453F4B 34.08%);
   font-family: $body-font;
+  overflow-x: hidden;
 }
 
 @include until($tablet) {
