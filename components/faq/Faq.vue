@@ -5,7 +5,7 @@
         <img :src="board" class="board">
         <div>
           <p class="info">
-            {{ info }}
+            {{ concatStats }}
           </p>
         </div>
       </div>
@@ -38,10 +38,9 @@ export default {
       type: Array,
       required: true
     },
-    info: {
-      type: String,
-      required: true,
-      default: '800+ hackers 200+ projects 800+ hackers 200+ projects'
+    stats: {
+      type: Object,
+      required: true
     }
   },
   data: function () {
@@ -60,7 +59,17 @@ export default {
         bin[idx % 2].push(item)
       })
       return bin
+    },
+    concatStats: function () {
+      let message = ''
+      for (const property in this.stats) {
+        const { count, name } = this.stats[property]
+        message = `${message}, ${count} ${name}`
+      }
+      return message + message + message
     }
+  },
+  methods: {
   }
 }
 </script>
@@ -116,7 +125,7 @@ export default {
       font-family: 'VT323', monospace;
       font-size: 64px;
       margin: auto;
-      animation: bannermove 10s linear infinite;
+      animation: bannermove 60s linear infinite;
     }
   }
 }
@@ -152,7 +161,7 @@ export default {
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(-50%, 0);
+    transform: translate(-100%, 0);
   }
 }
 

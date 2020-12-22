@@ -3,9 +3,9 @@
     <NavBar id="navbar" :faq="faqFlag" :sponsors="sponsorFlag" />
     <section id="mainSection">
       <div class="mainContent">
-        <Hero />
+        <Hero :registration="registrationFlag" />
         <About id="about" />
-        <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
+        <FAQ id="faq" v-if="faqFlag" :items="FAQs" :stats="statistics" />
         <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
       </div>
     </section>
@@ -37,7 +37,9 @@ export default {
       FAQS: [],
       faqFlag: true,
       sponsorFlag: true,
-      dataReady: false
+      registrationFlag: false,
+      dataReady: false,
+      statistics: {}
     }
   },
   computed: {
@@ -49,14 +51,16 @@ export default {
     const Sponsors = 'Sponsors'
     const FAQ = 'Faq'
     // data
-    const data = await fireDb.getWebsiteData()
+    const { featureFlags, Statistics } = await fireDb.getWebsiteData()
     const listOfSponsors = await fireDb.getCollection(Sponsors)
     const FaqQuestions = await fireDb.getCollection(FAQ)
 
     this.sponsors = listOfSponsors
     this.FAQs = FaqQuestions
-    this.faqFlag = FaqQuestions.length !== 0 && data.featureFlags.faqFlag
-    this.sponsorFlag = data.featureFlags.sponsorFlag
+    this.faqFlag = FaqQuestions.length !== 0 && featureFlags.faqFlag
+    this.sponsorFlag = featureFlags.sponsorFlag
+    this.registrationFlag = featureFlags.registrationFlag
+    this.statistics = Statistics
 
     this.dataReady = true
   }
@@ -69,6 +73,7 @@ export default {
 #main-page {
   background: linear-gradient(180deg, #4A414C 8.34%, #061A2C 9.19%, #586971 12%, #172C3E 15%, #172C3E 22%, #67757B 26.66%, #B5B5B5 30.2%, #453F4B 34.08%);
   font-family: $body-font;
+  overflow-x: hidden;
 }
 
 @include until($tablet) {

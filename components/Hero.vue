@@ -29,7 +29,6 @@ export default {
   methods: {
     apply: function () {
       this.toggle()
-      console.log(this.clicked)
     },
     toggle: function () {
       this.clicked = !this.clicked
