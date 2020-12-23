@@ -47,10 +47,10 @@ $animationtime: 5s;
   0% {
       opacity: 0;
   }
-  50% {
+  33% {
       opacity: 1;
   }
-  100% {
+  88% {
       opacity: 0;
   }
 }

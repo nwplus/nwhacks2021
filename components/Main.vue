@@ -1,12 +1,12 @@
 <template>
   <div id="main-page" v-if="dataReady" style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="faqFlag" :sponsors="sponsorFlag" />
+    <NavBar id="navbar" :faq="faqFlag" :sponsors="sponsorFlag" :mentorRegistration="mentorFlag" />
     <section id="mainSection">
       <div class="mainContent">
         <Hero :registration="registrationFlag" />
         <About id="about" />
         <FAQ id="faq" v-if="faqFlag" :items="FAQs" :stats="statistics" />
-        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
+        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" :mentorRegistration="mentorFlag" />
       </div>
     </section>
     <Footer />
@@ -38,8 +38,9 @@ export default {
       faqFlag: true,
       sponsorFlag: true,
       registrationFlag: false,
-      dataReady: false,
-      statistics: {}
+      statistics: {},
+      mentorFlag: false,
+      dataReady: false
     }
   },
   computed: {
@@ -60,6 +61,7 @@ export default {
     this.faqFlag = FaqQuestions.length !== 0 && featureFlags.faqFlag
     this.sponsorFlag = featureFlags.sponsorFlag
     this.registrationFlag = featureFlags.registrationFlag
+    this.mentorFlag = featureFlags.mentorFlag
     this.statistics = Statistics
 
     this.dataReady = true
