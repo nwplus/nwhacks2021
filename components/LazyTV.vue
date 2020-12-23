@@ -1,7 +1,7 @@
 <template>
   <div class="tv-content">
     <ul>
-      <li v-for="member in team">
+      <li v-for="member in team" :key="member.name">
         <a :href="member.link === '' ? 'https://www.nwplus.io' : member.link">
           <img
             :src="member.imgPath === '' ? require('@/static/team/robot.png') : member.imgPath"

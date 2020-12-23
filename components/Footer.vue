@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import TV from '@/components/TV.vue'
+import TV from '~/components/LazyTV.vue'
 
 export default {
   components: { TV }
