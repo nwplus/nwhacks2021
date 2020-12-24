@@ -95,6 +95,16 @@ ul {
   overflow-x: auto;
 }
 
+ul::-webkit-scrollbar {
+  background: none;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #C87682;
+  border-radius: 10px;
+  width: 7vw;
+}
+
 li {
   display: inline;
 }
@@ -111,6 +121,10 @@ li {
   .team-member-img {
     width: 13vw;
     height: 13vw;
+  }
+
+  ul::-webkit-scrollbar-thumb {
+    width: 15vw;
   }
 }
 </style>
