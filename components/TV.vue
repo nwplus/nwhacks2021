@@ -1,7 +1,7 @@
 <template>
   <div class="tv-content">
     <ul>
-      <li v-for="member in team" :key="member.name">
+      <li v-for="member in shuffledTeam" :key="member.name">
         <a :href="member.link === '' ? 'https://www.nwplus.io' : member.link">
           <img
             :src="member.imgPath === '' ? require('@/static/team/robot.png') : member.imgPath"
@@ -82,6 +82,18 @@ export default {
         new TeamMember('Victoria Lim', require('@/static/team/victorial.jpg'), 'https://www.linkedin.com/in/victoria-l-a393481ab'),
         new TeamMember('Vincent Chiang', require('~/static/team/vincent.png'), 'https://www.linkedin.com/in/vincent-chiang/')
       ]
+    }
+  },
+  computed: {
+    shuffledTeam() {
+      const shuffled = this.team
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        const temp = shuffled[i]
+        shuffled[i] = shuffled[j]
+        shuffled[j] = temp
+      }
+      return shuffled
     }
   }
 }
