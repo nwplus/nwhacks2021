@@ -1,7 +1,7 @@
 <template>
   <div class="footer-content">
     <div class="tv">
-      <!-- <TV /> -->
+      <TV />
     </div>
     <div id="footer-social">
       <div id="social">
@@ -117,10 +117,10 @@
 </template>
 
 <script>
-// import TV from '@/components/TV.vue'
+import TV from '~/components/TV.vue'
 
 export default {
-  // components: { TV }
+  components: { TV }
 }
 
 </script>
@@ -185,8 +185,9 @@ a:hover {
 
 .tv {
   position: absolute;
-  bottom: 67.5vw;
-  left: 7.5vw;
+  bottom: 59vw;
+  left: 4.5vw;
+  width: 29vw;
 }
 
 svg {
@@ -243,8 +244,9 @@ svg:hover path {
   }
 
   .tv {
-    bottom: 79vw;
-    left: 11vw;
+    bottom: 97.5vw;
+    left: 25vw;
+    width: 50vw;
   }
 
   .footer-text {
