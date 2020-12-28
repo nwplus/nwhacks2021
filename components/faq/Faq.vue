@@ -113,7 +113,7 @@ export default {
     margin-right: auto;
   }
   div {
-    width: 50vw;
+    width: 49.5vw;
     height: 8.75vw;
     top: 5.5vw;
     display: flex;
