@@ -3,7 +3,7 @@
     <div class="about-content">
       <span class="about-text">About</span>
       <p class="about-p1">
-        Join us at nwHacks on Jan. 9-10th 2021! Apply by Dec. 27th 2020, to participate as a hacker or mentor.
+        Join us at nwHacks on Jan. 9-10th 2021! Apply by Jan. 2nd 2021, to participate as a hacker or mentor.
         <br>
         Last year we connected over 800 of the brightest developers, engineers, and designers in the Pacific Northwest to collaborate and create amazing projects. This year we want to take it to the next level and connect even more hackers across the globe from the comfort of your home. <span class="about-p-bold">nwHacks is going online</span>!
       </p>

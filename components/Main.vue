@@ -5,7 +5,7 @@
       <div class="mainContent">
         <Hero :registration="registrationFlag" />
         <About id="about" />
-        <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
+        <FAQ id="faq" v-if="faqFlag" :items="FAQs" :stats="statistics" />
         <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" :mentorRegistration="mentorFlag" />
       </div>
     </section>
@@ -38,6 +38,7 @@ export default {
       faqFlag: true,
       sponsorFlag: true,
       registrationFlag: false,
+      statistics: {},
       mentorFlag: false,
       dataReady: false
     }
@@ -51,16 +52,17 @@ export default {
     const Sponsors = 'Sponsors'
     const FAQ = 'Faq'
     // data
-    const data = await fireDb.getWebsiteData()
+    const { featureFlags, Statistics } = await fireDb.getWebsiteData()
     const listOfSponsors = await fireDb.getCollection(Sponsors)
     const FaqQuestions = await fireDb.getCollection(FAQ)
 
     this.sponsors = listOfSponsors
     this.FAQs = FaqQuestions
-    this.faqFlag = FaqQuestions.length !== 0 && data.featureFlags.faqFlag
-    this.sponsorFlag = data.featureFlags.sponsorFlag
-    this.registrationFlag = data.featureFlags.registrationFlag
-    this.mentorFlag = data.featureFlags.mentorFlag
+    this.faqFlag = FaqQuestions.length !== 0 && featureFlags.faqFlag
+    this.sponsorFlag = featureFlags.sponsorFlag
+    this.registrationFlag = featureFlags.registrationFlag
+    this.mentorFlag = featureFlags.mentorFlag
+    this.statistics = Statistics
 
     this.dataReady = true
   }
