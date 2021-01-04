@@ -33,7 +33,7 @@
       </div>
       <div class="ctaContainer">
         <a v-if="mentorRegistration" href="https://www.notion.so/nwplus/PUBLIC-nwHacks-2021-Mentor-Syllabus-82ca879b387e41728ecdad0ab8ca25e9" rel="noopener" target="_blank" class="cta-btn"><img src="~@/assets/sprite/svg/mentor__btn.svg" alt="Apply to Mentor"></a>
-        <a href="mailto:sponsorship@nwplus.io?subject=Sponsorship" class="cta-btn"><img src="~@/assets/sprite/svg/sponsor__btn.svg" alt="Become a Sponsor"></a>
+        <a v-if="sponsorRegisteration" href="mailto:sponsorship@nwplus.io?subject=Sponsorship" class="cta-btn"><img src="~@/assets/sprite/svg/sponsor__btn.svg" alt="Become a Sponsor"></a>
       </div>
       <p class="footer-text">
         Based at the University of British Columbia, nwPlus is the organization behind your favourite student hackathons
