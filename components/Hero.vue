@@ -5,7 +5,7 @@
         <div v-if="registration">
           <a href="https://portal.nwplus.io/application"><img @mouseenter="applyImage = require('@/assets/sprite/svg/hero__btn_clicked.svg')" @mouseleave="applyImage = require('@/assets/sprite/svg/hero__btn.svg')" :src="applyImage" alt="Apply" class="hero-btn"></a>
         </div>
-        <img v-else src="~@/assets/sprite/svg/hero__btn_coming_soon.svg" alt="Coming Soon" class="hero-btn">
+        <img v-else src="~@/assets/sprite/svg/hero__btn_apps_closed.svg" alt="Applications are closed" class="hero-btn">
       </div>
     </div>
     <img
