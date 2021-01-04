@@ -6,7 +6,7 @@
         <Hero :registration="registrationFlag" />
         <About id="about" />
         <FAQ id="faq" v-if="faqFlag" :items="FAQs" :stats="statistics" />
-        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" :mentorRegistration="mentorFlag" />
+        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" :mentorRegistration="mentorFlag" :sponsorRegisteration="sponsorRegisteration" />
       </div>
     </section>
     <Footer />
@@ -40,7 +40,8 @@ export default {
       registrationFlag: false,
       statistics: {},
       mentorFlag: false,
-      dataReady: false
+      dataReady: false,
+      sponsorRegisteration: false
     }
   },
   computed: {
@@ -62,6 +63,7 @@ export default {
     this.sponsorFlag = featureFlags.sponsorFlag
     this.registrationFlag = featureFlags.registrationFlag
     this.mentorFlag = featureFlags.mentorFlag
+    this.sponsorRegisteration = featureFlags.sponsorRegisteration
     this.statistics = Statistics
 
     this.dataReady = true
